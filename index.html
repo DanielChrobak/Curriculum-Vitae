@@ -1,845 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Daniel Chrobak - Network Infrastructure Specialist</title>
-<meta name="description" content="Network Infrastructure Specialist & Full Stack Developer. Building enterprise wireless networks, managing complex network deployments, and developing web applications.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-<style>
-:root{--bg-primary:#0a0a0b;--bg-secondary:#151516;--bg-tertiary:#1a1a1b;--text-primary:#e4e4e7;--text-secondary:#a1a1aa;--accent-primary:#4d9d9d;--accent-secondary:#3d8080;--border-color:#27272a;--hover-bg:#1f1f20;--sidebar-width:280px}
-*{margin:0;padding:0;box-sizing:border-box;scrollbar-width:thin;scrollbar-color:var(--accent-primary) var(--bg-secondary)}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6;overflow-x:hidden;position:relative}
-#particles-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;opacity:.3;pointer-events:none}
-::-webkit-scrollbar{width:10px;height:10px}
-::-webkit-scrollbar-track{background:var(--bg-secondary);border-radius:10px;margin:4px}
-::-webkit-scrollbar-thumb{background:var(--accent-primary);border-radius:10px;border:2px solid var(--bg-secondary);transition:background .3s}
-::-webkit-scrollbar-thumb:hover{background:var(--accent-secondary)}
-.sidebar{position:fixed;top:0;left:0;width:var(--sidebar-width);height:100vh;background:var(--bg-secondary);border-right:1px solid var(--border-color);padding:2rem 0;z-index:1000;transition:transform .3s;overflow-y:auto}
-.sidebar-header{padding:0 2rem;margin-bottom:3rem}
-.sidebar-title{font-size:1.5rem;font-weight:700;letter-spacing:-.5px}
-.sidebar-nav{display:flex;flex-direction:column;gap:.25rem;padding:0 1rem}
-.nav-link{display:block;padding:.75rem 1rem;color:var(--text-secondary);text-decoration:none;font-size:.95rem;font-weight:500;border-radius:8px;transition:all .2s}
-.nav-link.active,.nav-link:hover{background:var(--hover-bg);color:var(--text-primary)}
-.mobile-menu-toggle{position:fixed;top:1.5rem;left:1.5rem;width:40px;height:40px;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:8px;display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer;z-index:1001;transition:all .3s}
-.mobile-menu-toggle span{width:20px;height:2px;background:var(--text-primary);transition:all .3s}
-.mobile-menu-toggle:hover{background:var(--hover-bg)}
-.main-content{margin-left:var(--sidebar-width);padding:0 6rem 4rem;max-width:1400px;position:relative;z-index:1}
-.hero-section{position:relative;padding:8rem 0 6rem;border-bottom:1px solid var(--border-color);margin-bottom:4rem;overflow:hidden}
-.hero-title{font-size:4rem;font-weight:700;margin-bottom:1rem;letter-spacing:-1px;background:linear-gradient(135deg,var(--text-primary) 0%,var(--accent-primary) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fadeInUp .8s ease-out}
-.hero-tagline{font-size:1.5rem;font-weight:500;color:var(--accent-primary);margin-bottom:1.5rem;min-height:2.5rem;animation:fadeInUp .8s ease-out .2s both}
-.typing-text{border-right:2px solid var(--accent-primary);animation:blink .7s step-end infinite}
-@keyframes blink{from,to{border-color:transparent}50%{border-color:var(--accent-primary)}}
-@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.hero-location{display:flex;align-items:center;gap:.5rem;color:var(--text-secondary);margin-bottom:1.5rem;animation:fadeInUp .8s ease-out .4s both}
-.hero-social{display:flex;gap:1rem;margin-bottom:2rem;animation:fadeInUp .8s ease-out .6s both}
-.social-link{width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:8px;color:var(--text-secondary);font-size:1.25rem;text-decoration:none;transition:all .3s;position:relative;overflow:hidden}
-.social-link::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:var(--accent-primary);transition:width .4s,height .4s,top .4s,left .4s;transform:translate(-50%,-50%);z-index:-1}
-.social-link:hover::before{width:100%;height:100%}
-.social-link:hover{border-color:var(--accent-primary);color:var(--bg-primary);transform:translateY(-4px) scale(1.05)}
-.hero-description{font-size:1.125rem;line-height:1.8;color:var(--text-secondary);max-width:800px;animation:fadeInUp .8s ease-out .8s both}
-.section-title{font-size:2.5rem;font-weight:700;margin-bottom:3rem;letter-spacing:-.5px}
-section{margin-bottom:6rem;position:relative;z-index:1}
-.tech-stack-marquee{position:relative;overflow:hidden;padding:2rem 0}
-.tech-stack-track{display:flex;gap:2rem;width:max-content}
-.tech-item{display:flex;flex-direction:column;align-items:center;gap:.75rem;min-width:100px;padding:1.5rem 1rem;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:12px;transition:all .3s}
-.tech-item:hover{background:var(--bg-tertiary);border-color:var(--accent-primary);transform:translateY(-4px)}
-.tech-item i{font-size:2rem;color:var(--accent-primary)}
-.tech-item span{font-size:.875rem;font-weight:500;color:var(--text-secondary)}
-.timeline{position:relative;padding-left:2rem}
-.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent-primary) 0%,transparent 100%)}
-.timeline-item{position:relative;margin-bottom:3rem}
-.timeline-dot{position:absolute;left:-2rem;top:.5rem;width:12px;height:12px;background:var(--accent-primary);border:3px solid var(--bg-primary);border-radius:50%;box-shadow:0 0 0 4px var(--bg-secondary)}
-.card{background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:12px;padding:2rem;transition:all .3s}
-.card:hover{border-color:var(--accent-primary);transform:translateY(-2px)}
-.card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;gap:1rem}
-.card-title{font-size:1.25rem;font-weight:600;color:var(--accent-primary);margin-bottom:.25rem}
-.card-subtitle{font-size:1.125rem;font-weight:600;color:var(--text-primary)}
-.card-date{font-size:.875rem;color:var(--text-secondary);font-weight:500;white-space:nowrap}
-.card-description{color:var(--text-secondary);line-height:1.7;margin-bottom:1rem}
-.list-styled{list-style:none;padding:0;margin:0}
-.list-styled li{position:relative;padding-left:1.5rem;margin-bottom:.5rem;color:var(--text-secondary);font-size:.95rem}
-.list-styled li::before{content:'•';position:absolute;left:0;color:var(--accent-primary);font-size:1.5rem;line-height:1}
-.project-card{display:grid;grid-template-columns:300px 1fr;gap:2rem;margin-bottom:2rem}
-.project-card:hover{transform:translateY(-4px)}
-.project-image{width:100%;height:200px;background:linear-gradient(135deg,var(--bg-tertiary) 0%,var(--bg-primary) 100%);display:flex;align-items:center;justify-content:center;border:1px solid var(--border-color);border-radius:8px}
-.project-image i{font-size:3rem;color:var(--accent-primary);opacity:.5}
-.project-content{display:flex;flex-direction:column;justify-content:center}
-.project-title{font-size:1.5rem;font-weight:600;margin-bottom:1rem}
-.tech-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
-.tech-badge{padding:.4rem .875rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:6px;font-size:.8rem;font-weight:600;color:var(--text-secondary);transition:all .2s}
-.tech-badge:hover{background:var(--accent-primary);border-color:var(--accent-primary);color:var(--bg-primary);transform:translateY(-2px)}
-.skills-grid,.contact-grid{display:grid;gap:1.5rem}
-.skills-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.contact-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.skill-tags{display:flex;flex-wrap:wrap;gap:.5rem}
-.skill-tag{padding:.5rem 1rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:20px;font-size:.85rem;font-weight:600;color:var(--text-secondary);transition:all .2s}
-.skill-tag:hover{background:var(--accent-primary);border-color:var(--accent-primary);color:var(--bg-primary);transform:translateY(-2px)}
-.cert-category{margin-bottom:2rem}
-.cert-title{display:flex;align-items:center;gap:1rem;font-size:1.5rem;font-weight:600;margin-bottom:2rem;padding-bottom:1rem;border-bottom:2px solid var(--border-color)}
-.cert-title i{color:var(--accent-primary);font-size:1.75rem}
-.cert-list{display:flex;flex-direction:column;gap:1rem}
-.cert-item{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;padding:1.25rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:8px;transition:all .3s}
-.cert-item:hover{border-color:var(--accent-primary);transform:translateX(5px)}
-.cert-info{flex:1}
-.cert-name{font-weight:600;font-size:.95rem;color:var(--text-primary);margin-bottom:.25rem}
-.cert-verify{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.3rem;background:var(--accent-primary);color:var(--bg-primary);text-decoration:none;font-size:.875rem;font-weight:600;border-radius:8px;white-space:nowrap;transition:all .2s}
-.cert-verify:hover{background:var(--accent-secondary);transform:translateY(-2px)}
-.expertise-card{display:flex;gap:1.5rem;margin-bottom:1.5rem}
-.expertise-icon i{font-size:2rem;color:var(--accent-primary)}
-.expertise-title{font-size:1.25rem;font-weight:600;margin-bottom:.75rem}
-.contact-card{display:flex;align-items:center;gap:1rem;padding:1.5rem;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:12px;color:var(--text-primary);text-decoration:none;font-weight:500;transition:all .3s;word-break:break-word}
-.contact-card:hover{border-color:var(--accent-primary);background:var(--bg-tertiary);transform:translateY(-4px)}
-.contact-card i{font-size:1.5rem;color:var(--accent-primary);flex-shrink:0}
-.footer{padding:3rem 0;text-align:center;border-top:1px solid var(--border-color);color:var(--text-secondary);font-size:.9rem;position:relative;z-index:1}
-.workflow-step{display:grid;grid-template-columns:80px 1fr;gap:2rem;position:relative;padding:1.5rem 0}
-.workflow-number{width:80px;height:80px;background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;color:var(--bg-primary);position:relative;z-index:2;box-shadow:0 4px 12px rgba(77,157,157,.3)}
-.workflow-number i{font-size:1.75rem;margin-bottom:.25rem}
-.workflow-arrow{position:absolute;left:39px;top:80px;width:2px;height:calc(100% - 80px);background:linear-gradient(180deg,var(--accent-primary) 0%,var(--border-color) 100%);z-index:1}
-.workflow-arrow::after{content:'';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:10px solid var(--border-color)}
-.workflow-step:last-child .workflow-arrow{display:none}
-.workflow-content{background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:12px;padding:2rem;transition:all .3s}
-.workflow-content:hover{border-color:var(--accent-primary);transform:translateX(5px);box-shadow:0 4px 16px rgba(77,157,157,.15)}
-.workflow-title{font-size:1.5rem;font-weight:600;color:var(--accent-primary);margin-bottom:1rem}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.3rem;font-size:.875rem;font-weight:600;border-radius:8px;cursor:pointer;transition:all .2s;margin-top:1rem;border:none}
-.btn-primary{background:var(--accent-primary);color:var(--bg-primary)}
-.btn-primary:hover{background:var(--accent-secondary);transform:translateY(-2px)}
-.modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.85);z-index:2000;opacity:0;transition:opacity .3s;align-items:center;justify-content:center}
-.modal.active{display:flex;opacity:1}
-.modal-container{background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:16px;max-width:1000px;width:90%;max-height:85vh;overflow-y:auto;position:relative;transform:scale(.9);transition:transform .3s;padding:0}
-.modal.active .modal-container{transform:scale(1)}
-.modal-header{position:sticky;top:0;background:var(--bg-secondary);border-bottom:1px solid var(--border-color);padding:2rem;display:flex;justify-content:space-between;align-items:center;z-index:10}
-.modal-title{font-size:1.75rem;font-weight:700;color:var(--accent-primary)}
-.modal-close{background:none;border:none;color:var(--text-secondary);font-size:2rem;cursor:pointer;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:8px;transition:all .2s}
-.modal-close:hover{background:var(--hover-bg);color:var(--text-primary)}
-.modal-body{padding:2rem}
-.modal-section{margin-bottom:2rem}
-.modal-section h3{font-size:1.25rem;font-weight:600;margin-bottom:1rem}
-.modal-section p{color:var(--text-secondary);line-height:1.7;margin-bottom:1rem}
-@media (max-width:1024px){
-.main-content{padding:4rem 3rem}
-.hero-title{font-size:2.75rem}
-.hero-tagline{font-size:1.25rem}
-.section-title{font-size:2rem}
-.project-card{grid-template-columns:1fr}
-.workflow-step{grid-template-columns:70px 1fr;gap:1.5rem}
-.workflow-number{width:70px;height:70px;font-size:1.25rem}
-.workflow-arrow{left:34px;top:70px;height:calc(100% - 70px)}
-}
-@media (max-width:768px){
-.sidebar{transform:translateX(-100%)}
-.sidebar.active{transform:translateX(0)}
-.mobile-menu-toggle{display:flex}
-.main-content{margin-left:0;padding:6rem 1.5rem 3rem}
-.hero-section{padding:6rem 0 4rem}
-.hero-title{font-size:2.25rem}
-.hero-tagline{font-size:1.125rem}
-.section-title{font-size:1.75rem}
-.timeline{padding-left:1.5rem}
-.timeline-dot{left:-1.75rem}
-.card-header{flex-direction:column}
-.skills-grid,.contact-grid{grid-template-columns:1fr}
-.cert-item{flex-direction:column;align-items:flex-start}
-.cert-verify{width:100%;justify-content:center}
-.workflow-step{grid-template-columns:60px 1fr;gap:1rem}
-.workflow-number{width:60px;height:60px;font-size:1rem}
-.workflow-number i{font-size:1.5rem}
-.workflow-arrow{left:29px;top:60px;height:calc(100% - 60px)}
-.workflow-content{padding:1.5rem}
-.workflow-title{font-size:1.25rem}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daniel Chrobak - Full Stack Developer</title>
+  <meta name="description" content="Full Stack Developer & Systems Enthusiast. Building web applications, exploring network infrastructure, and developing innovative software solutions.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-<canvas id="particles-canvas"></canvas>
-<button class="mobile-menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-<aside class="sidebar">
-<div class="sidebar-header"><h1 class="sidebar-title">Daniel Chrobak</h1></div>
-<nav class="sidebar-nav">
-<a href="#about" class="nav-link active">About</a>
-<a href="#process" class="nav-link">How I Work</a>
-<a href="#experience" class="nav-link">Experience</a>
-<a href="#projects" class="nav-link">Projects</a>
-<a href="#skills" class="nav-link">Skills</a>
-<a href="#certifications" class="nav-link">Certifications</a>
-<a href="#education" class="nav-link">Education</a>
-<a href="#expertise" class="nav-link">Expertise</a>
-<a href="#contact" class="nav-link">Contact Me</a>
-</nav>
-</aside>
-<main class="main-content">
-<section id="about" class="hero-section">
-<div class="hero-content">
-<h1 class="hero-title">Daniel Chrobak</h1>
-<div class="hero-tagline"><span class="typing-text"></span></div>
-<div class="hero-location"><i class="fas fa-map-marker-alt"></i><span>Chicago, IL</span></div>
-<div class="hero-social">
-<a href="mailto:danielchrobak12@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
-<a href="https://github.com/DanielChrobak" target="_blank" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-<a href="https://linkedin.com/in/danielchrobak12" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-</div>
-<p class="hero-description">I'm a Network Infrastructure Specialist and Full-Stack Developer with expertise in designing and deploying enterprise wireless networks, managing complex router/switch/AP deployments, and building web applications. I specialize in commercial wireless infrastructure, network architecture, and creating production-ready systems from concept to implementation.</p>
-</div>
-</section>
+  <canvas id="particles-canvas"></canvas>
 
-<section class="tech-stack-section">
-<h2 class="section-title">What I work with</h2>
-<div class="tech-stack-marquee">
-<div class="tech-stack-track" id="techTrack">
-<div class="tech-item"><i class="fas fa-wifi"></i><span>Wireless Networks</span></div>
-<div class="tech-item"><i class="fas fa-network-wired"></i><span>Network Infrastructure</span></div>
-<div class="tech-item"><i class="fas fa-broadcast-tower"></i><span>Access Points</span></div>
-<div class="tech-item"><i class="fab fa-python"></i><span>Python</span></div>
-<div class="tech-item"><i class="fas fa-flask"></i><span>Flask</span></div>
-<div class="tech-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
-<div class="tech-item"><i class="fas fa-database"></i><span>SQL</span></div>
-<div class="tech-item"><i class="fas fa-server"></i><span>Server Management</span></div>
-<div class="tech-item"><i class="fas fa-shield-alt"></i><span>Network Security</span></div>
-<div class="tech-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
-<div class="tech-item"><i class="fas fa-microchip"></i><span>ESP32/Arduino</span></div>
-</div>
-</div>
-</section>
+  <button class="mobile-menu-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 
-<section id="process" class="process-section">
-<h2 class="section-title">How I Work</h2>
-<p class="hero-description" style="margin-bottom:3rem">My approach to network infrastructure and development projects follows a systematic workflow from initial requirements analysis through deployment and ongoing monitoring. Each phase builds upon the previous, ensuring robust, scalable solutions through careful planning and iterative execution.</p>
-<div class="workflow-container">
-<div class="workflow-step">
-<div class="workflow-number"><i class="fas fa-lightbulb"></i></div>
-<div class="workflow-arrow"></div>
-<div class="workflow-content">
-<h3 class="workflow-title">Requirements & Planning</h3>
-<p class="card-description">Every project begins with understanding client needs, site surveys, and defining clear objectives. For network deployments, I assess coverage requirements, bandwidth needs, existing infrastructure, and technical constraints. I create detailed implementation roadmaps including equipment lists, network topology diagrams, and deployment timelines.</p>
-</div>
-</div>
-<div class="workflow-step">
-<div class="workflow-number"><i class="fas fa-code"></i></div>
-<div class="workflow-arrow"></div>
-<div class="workflow-content">
-<h3 class="workflow-title">Implementation & Configuration</h3>
-<p class="card-description">I configure routers, switches, and access points with optimized settings for performance and security. For software projects, I develop in small, testable increments using version control. Network deployments follow best practices for VLAN configuration, security protocols, QoS settings, and interference mitigation. Each component is tested individually before system integration.</p>
-</div>
-</div>
-<div class="workflow-step">
-<div class="workflow-number"><i class="fas fa-bug"></i></div>
-<div class="workflow-arrow"></div>
-<div class="workflow-content">
-<h3 class="workflow-title">Troubleshooting & Optimization</h3>
-<p class="card-description">When issues arise, I use systematic diagnostic techniques including signal analysis, packet capture, configuration review, and hardware testing. For network problems, I leverage community resources, manufacturer documentation, and diagnostic tools to isolate and resolve connectivity issues, performance bottlenecks, and configuration conflicts.</p>
-</div>
-</div>
-<div class="workflow-step">
-<div class="workflow-number"><i class="fas fa-check-circle"></i></div>
-<div class="workflow-arrow"></div>
-<div class="workflow-content">
-<h3 class="workflow-title">Testing & Quality Assurance</h3>
-<p class="card-description">Before final deployment, I conduct comprehensive testing including coverage validation, throughput testing, failover scenarios, and security audits. For web applications, I validate functionality across devices and browsers. Network deployments undergo stress testing, roaming verification, and real-world usage scenarios to ensure reliability.</p>
-</div>
-</div>
-<div class="workflow-step">
-<div class="workflow-number"><i class="fas fa-rocket"></i></div>
-<div class="workflow-arrow"></div>
-<div class="workflow-content">
-<h3 class="workflow-title">Deployment & Monitoring</h3>
-<p class="card-description">I deploy networks with proper documentation, implement monitoring systems for performance tracking, and establish baseline metrics. Applications are deployed to production with configuration management and health checks. Network deployments include ongoing signal monitoring, bandwidth utilization tracking, and automated alerting for issues.</p>
-</div>
-</div>
-<div class="workflow-step">
-<div class="workflow-number"><i class="fas fa-sync-alt"></i></div>
-<div class="workflow-content">
-<h3 class="workflow-title">Maintenance & Support</h3>
-<p class="card-description">I provide ongoing maintenance including firmware updates, configuration adjustments, performance optimization, and capacity planning. Documentation covers network topology, equipment specifications, configuration settings, and troubleshooting procedures. I monitor system performance, implement updates based on usage patterns, and provide technical support to end users.</p>
-</div>
-</div>
-</div>
-<div class="card" style="margin-top:2rem">
-<h3 class="workflow-title">Core Principles</h3>
-<ul class="list-styled">
-<li>Design networks for scalability, redundancy, and future expansion requirements</li>
-<li>Implement security best practices including WPA3, VLAN segmentation, and access controls</li>
-<li>Optimize RF performance through channel selection, power settings, and antenna placement</li>
-<li>Document network topology, configurations, and changes comprehensively</li>
-<li>Select appropriate hardware based on coverage area, user density, and performance requirements</li>
-<li>Test thoroughly in real-world conditions before declaring deployments complete</li>
-<li>Provide training and documentation for network administrators and end users</li>
-<li>Stay current with networking technologies, security standards, and industry best practices</li>
-<li>Leverage community knowledge from Discord technical groups and professional forums</li>
-</ul>
-</div>
-</section>
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h1 class="sidebar-title">Daniel Chrobak</h1>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#about" class="nav-link active">About</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#certifications" class="nav-link">Certifications</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#expertise" class="nav-link">Expertise</a>
+      <a href="#contact" class="nav-link">Contact Me</a>
+    </nav>
+  </aside>
 
-<section id="experience" class="experience-section">
-<h2 class="section-title">Experience</h2>
-<div class="timeline">
-<div class="timeline-item">
-<div class="timeline-dot"></div>
-<div class="card">
-<div class="card-header">
-<div>
-<h3 class="card-title">Wireless Revenue</h3>
-<p class="card-subtitle">Founder & Network Infrastructure Lead</p>
-</div>
-<span class="card-date">2025 - Present</span>
-</div>
-<p class="card-description">Founded and developed wireless infrastructure deployment business, designing and managing enterprise-grade wireless networks for commercial venues.</p>
-<ul class="list-styled">
-<li>Design and deploy commercial wireless networks with enterprise-grade routers, switches, and access points</li>
-<li>Perform site surveys, RF planning, and coverage optimization for high-traffic venues</li>
-<li>Configure network equipment including VLANs, security policies, QoS, and guest network isolation</li>
-<li>Develop Flask-based management dashboard for network monitoring, analytics, and partner coordination</li>
-<li>Establish partnerships with local businesses for wireless infrastructure deployment and revenue sharing</li>
-<li>Provide ongoing network management, troubleshooting, and performance optimization</li>
-</ul>
-</div>
-</div>
-<div class="timeline-item">
-<div class="timeline-dot"></div>
-<div class="card">
-<div class="card-header">
-<div>
-<h3 class="card-title">Discord Technical Communities</h3>
-<p class="card-subtitle">Network Infrastructure Mentor & Community Administrator</p>
-</div>
-<span class="card-date">2019 - Present</span>
-</div>
-<p class="card-description">Lead and mentor multiple online technical communities focused on networking, wireless infrastructure, server management, and web development.</p>
-<ul class="list-styled">
-<li>Provide expert guidance on wireless network design, router/switch configuration, and AP deployment strategies</li>
-<li>Help community members troubleshoot network connectivity issues, performance problems, and configuration challenges</li>
-<li>Share best practices for network security, VLAN configuration, bandwidth management, and QoS implementation</li>
-<li>Mentor developers on Flask web development, database design, and deployment strategies</li>
-<li>Create technical documentation, network diagrams, and configuration examples for community resources</li>
-<li>Answer questions on server hardware selection, virtualization, and self-hosted infrastructure</li>
-</ul>
-</div>
-</div>
-<div class="timeline-item">
-<div class="timeline-dot"></div>
-<div class="card">
-<div class="card-header">
-<div>
-<h3 class="card-title">Self-Hosted Infrastructure & Development Servers</h3>
-<p class="card-subtitle">Network Administrator & System Architect</p>
-</div>
-<span class="card-date">2020 - Present</span>
-</div>
-<p class="card-description">Design, deploy, and manage self-hosted network infrastructure including servers, network equipment, and development environments.</p>
-<ul class="list-styled">
-<li>Configure and maintain enterprise server hardware including Dell PowerEdge systems</li>
-<li>Implement network infrastructure with proper segmentation, firewall rules, and security policies</li>
-<li>Deploy game servers, web applications, and development environments with automated backup systems</li>
-<li>Optimize network performance through bandwidth management, QoS configuration, and traffic analysis</li>
-<li>Implement monitoring solutions for server health, network performance, and security alerting</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
+  <main class="main-content">
+    <section id="about" class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">Daniel Chrobak</h1>
+        <div class="hero-tagline"><span class="typing-text"></span></div>
+        <div class="hero-location">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Chicago, IL</span>
+        </div>
+        <div class="hero-social">
+          <a href="mailto:danielchrobak12@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/DanielChrobak" target="_blank" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/danielchrobak12" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p class="hero-description">
+          I'm a Full Stack Developer and systems enthusiast with a strong foundation in web development,
+          network fundamentals, and infrastructure. I enjoy building web applications, exploring low-level
+          systems programming, and learning about enterprise networking. Recent graduate now focused on
+          building innovative projects and contributing to technical communities.
+        </p>
+      </div>
+    </section>
 
-<section id="projects" class="projects-section">
-<h2 class="section-title">Featured Projects</h2>
-<div class="project-card card">
-<div class="project-image"><i class="fas fa-wifi"></i></div>
-<div class="project-content">
-<h3 class="project-title">Commercial Wireless Network Infrastructure</h3>
-<div class="tech-badges">
-<span class="tech-badge">Enterprise WiFi</span>
-<span class="tech-badge">Network Design</span>
-<span class="tech-badge">RF Planning</span>
-<span class="tech-badge">VLAN Configuration</span>
-<span class="tech-badge">QoS Implementation</span>
-</div>
-<p class="card-description">End-to-end design and deployment of commercial wireless networks for high-traffic venues. Includes site surveys, RF optimization, equipment selection, configuration, and ongoing management for enterprise-grade wireless infrastructure.</p>
-<ul class="list-styled">
-<li>Conducted comprehensive site surveys and RF planning for optimal coverage and performance</li>
-<li>Designed network topology with VLAN segmentation, guest isolation, and security policies</li>
-<li>Selected and configured enterprise routers, managed switches, and high-density access points</li>
-<li>Implemented QoS policies for traffic prioritization and bandwidth management</li>
-<li>Deployed monitoring solutions for network performance, device health, and user analytics</li>
-<li>Provided ongoing network optimization, firmware updates, and technical support</li>
-</ul>
-<button class="btn btn-primary" onclick="openModal('wireless')"><i class="fas fa-expand-alt"></i> View Details</button>
-</div>
-</div>
+    <section class="tech-stack-section">
+      <h2 class="section-title">What I work with</h2>
+      <div class="tech-stack-marquee">
+        <div class="tech-stack-track" id="techTrack"></div>
+      </div>
+    </section>
 
-<div class="project-card card">
-<div class="project-image"><i class="fas fa-chart-line"></i></div>
-<div class="project-content">
-<h3 class="project-title">Network Management & Analytics Platform</h3>
-<div class="tech-badges">
-<span class="tech-badge">Python Flask</span>
-<span class="tech-badge">SQLAlchemy</span>
-<span class="tech-badge">Bootstrap 5</span>
-<span class="tech-badge">Network APIs</span>
-<span class="tech-badge">Data Visualization</span>
-</div>
-<p class="card-description">Comprehensive Flask-based web platform for managing commercial wireless deployments with partner coordination, installation tracking, performance monitoring, and real-time analytics dashboards.</p>
-<ul class="list-styled">
-<li>Built authentication system with role-based access for partners, administrators, and technicians</li>
-<li>Implemented real-time network monitoring with device status, bandwidth utilization, and uptime tracking</li>
-<li>Developed partner management system with installation assignments, earnings tracking, and documentation</li>
-<li>Created interactive mapping interface using Leaflet.js for visualizing network deployments</li>
-<li>Integrated analytics dashboards with Chart.js for performance trends and capacity planning</li>
-<li>Built RESTful API endpoints for mobile app integration and external monitoring systems</li>
-</ul>
-<button class="btn btn-primary" onclick="openModal('platform')"><i class="fas fa-expand-alt"></i> View Details</button>
-</div>
-</div>
+    <section id="experience" class="experience-section">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline" id="timeline"></div>
+    </section>
 
-<div class="project-card card">
-<div class="project-image"><i class="fas fa-desktop"></i></div>
-<div class="project-content">
-<h3 class="project-title">GPU Virtualization & Partitioning Tool</h3>
-<div class="tech-badges">
-<span class="tech-badge">PowerShell</span>
-<span class="tech-badge">Hyper-V</span>
-<span class="tech-badge">GPU Partitioning</span>
-<span class="tech-badge">Virtualization</span>
-<span class="tech-badge">System Administration</span>
-</div>
-<p class="card-description">Advanced PowerShell utility enabling GPU passthrough and partitioning for Hyper-V virtual machines with support for any GPU hardware, democratizing GPU virtualization beyond enterprise-exclusive solutions.</p>
-<ul class="list-styled">
-<li>Developed unified VM management suite with automated GPU partition creation</li>
-<li>Implemented hardware-agnostic GPU virtualization supporting consumer and professional GPUs</li>
-<li>Created NVIDIA driver injection system for seamless VM GPU driver installation</li>
-<li>Built interactive terminal interface with color-coded logging and error handling</li>
-</ul>
-<button class="btn btn-primary" onclick="openModal('gpu')"><i class="fas fa-expand-alt"></i> View Details</button>
-</div>
-</div>
-</section>
+    <section id="projects" class="projects-section">
+      <h2 class="section-title">Featured Projects</h2>
+      <div id="projects-container"></div>
+    </section>
 
-<section id="skills" class="skills-section">
-<h2 class="section-title">Technical Skills</h2>
-<div class="skills-grid">
-<div class="card">
-<h3 class="card-title"><i class="fas fa-network-wired"></i> Network Infrastructure</h3>
-<div class="skill-tags">
-<span class="skill-tag">Wireless Network Design</span>
-<span class="skill-tag">Router Configuration</span>
-<span class="skill-tag">Switch Management</span>
-<span class="skill-tag">Access Point Deployment</span>
-<span class="skill-tag">VLAN Configuration</span>
-<span class="skill-tag">Network Security</span>
-<span class="skill-tag">RF Planning</span>
-<span class="skill-tag">Site Surveys</span>
-</div>
-</div>
-<div class="card">
-<h3 class="card-title"><i class="fas fa-wifi"></i> Wireless Technologies</h3>
-<div class="skill-tags">
-<span class="skill-tag">Enterprise WiFi</span>
-<span class="skill-tag">WiFi 6/6E</span>
-<span class="skill-tag">Channel Optimization</span>
-<span class="skill-tag">Coverage Planning</span>
-<span class="skill-tag">Interference Analysis</span>
-<span class="skill-tag">Guest Networks</span>
-<span class="skill-tag">Roaming Optimization</span>
-</div>
-</div>
-<div class="card">
-<h3 class="card-title"><i class="fas fa-code"></i> Programming & Development</h3>
-<div class="skill-tags">
-<span class="skill-tag">Python</span>
-<span class="skill-tag">Flask</span>
-<span class="skill-tag">JavaScript</span>
-<span class="skill-tag">HTML/CSS</span>
-<span class="skill-tag">SQL</span>
-<span class="skill-tag">PowerShell</span>
-<span class="skill-tag">REST APIs</span>
-</div>
-</div>
-<div class="card">
-<h3 class="card-title"><i class="fas fa-server"></i> Server & Infrastructure</h3>
-<div class="skill-tags">
-<span class="skill-tag">Linux Administration</span>
-<span class="skill-tag">Windows Server</span>
-<span class="skill-tag">Hyper-V</span>
-<span class="skill-tag">Virtualization</span>
-<span class="skill-tag">Server Hardware</span>
-<span class="skill-tag">CloudFlare</span>
-</div>
-</div>
-<div class="card">
-<h3 class="card-title"><i class="fas fa-database"></i> Database & Web Frameworks</h3>
-<div class="skill-tags">
-<span class="skill-tag">SQLite</span>
-<span class="skill-tag">MySQL</span>
-<span class="skill-tag">SQLAlchemy</span>
-<span class="skill-tag">Bootstrap</span>
-<span class="skill-tag">WebRTC</span>
-<span class="skill-tag">Socket.IO</span>
-</div>
-</div>
-<div class="card">
-<h3 class="card-title"><i class="fas fa-microchip"></i> Embedded & IoT</h3>
-<div class="skill-tags">
-<span class="skill-tag">ESP32</span>
-<span class="skill-tag">Arduino</span>
-<span class="skill-tag">LoRa</span>
-<span class="skill-tag">Sensor Integration</span>
-<span class="skill-tag">Hardware Prototyping</span>
-</div>
-</div>
-</div>
-</section>
+    <section id="skills" class="skills-section">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid" id="skills-grid"></div>
+    </section>
 
-<section id="certifications" class="certifications-section">
-<h2 class="section-title">Certifications</h2>
-<div class="cert-category">
-<h3 class="cert-title"><i class="fas fa-shield-alt"></i>Cybersecurity</h3>
-<div class="cert-list">
-<div class="cert-item">
-<div class="cert-info">
-<p class="cert-name">Cisco Certified Support Technician Cybersecurity</p>
-<span class="card-date">April 2024</span>
-</div>
-<a href="https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=515&cvid=KKPh3zgIUhL30nBtJ3xnSA==" target="_blank" class="cert-verify"><i class="fas fa-certificate"></i> Verify</a>
-</div>
-<div class="cert-item">
-<div class="cert-info">
-<p class="cert-name">Information Technology Specialist in Cybersecurity</p>
-<span class="card-date">April 2024</span>
-</div>
-<a href="https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=494&cvid=s9tL9eqrS6YCY2B2XJ4ydg==" target="_blank" class="cert-verify"><i class="fas fa-certificate"></i> Verify</a>
-</div>
-<div class="cert-item">
-<div class="cert-info">
-<p class="cert-name">Information Technology Specialist in Network Security</p>
-<span class="card-date">April 2024</span>
-</div>
-<a href="https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=465&cvid=L/gEYw/ZEyVKrd1zzrIPLg==" target="_blank" class="cert-verify"><i class="fas fa-certificate"></i> Verify</a>
-</div>
-</div>
-</div>
+    <section id="certifications" class="certifications-section">
+      <h2 class="section-title">Certifications</h2>
+      <div id="certs-container"></div>
+    </section>
 
-<div class="cert-category">
-<h3 class="cert-title"><i class="fas fa-network-wired"></i>Networking</h3>
-<div class="cert-list">
-<div class="cert-item">
-<div class="cert-info">
-<p class="cert-name">Information Technology Specialist in Networking</p>
-<span class="card-date">February 2024</span>
-</div>
-<a href="https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=464&cvid=y6dFmKCxy7xBRH7eQuc0dw==" target="_blank" class="cert-verify"><i class="fas fa-certificate"></i> Verify</a>
-</div>
-</div>
-</div>
+    <section id="education" class="education-section">
+      <h2 class="section-title">Education</h2>
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-subtitle">Moraine Valley Community College</h3>
+            <p class="card-title">Associate of Applied Science - IT Security Specialist Program</p>
+          </div>
+          <span class="card-date">2025</span>
+        </div>
+        <p class="card-description">Completed coursework in network security, system administration, cybersecurity fundamentals, and network infrastructure.</p>
+      </div>
+    </section>
 
-<div class="cert-category">
-<h3 class="cert-title"><i class="fas fa-code"></i>Web Development</h3>
-<div class="cert-list">
-<div class="cert-item">
-<div class="cert-info">
-<p class="cert-name">Information Technology Specialist in HTML5 Application Development</p>
-<span class="card-date">April 2024</span>
-</div>
-<a href="https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=474&cvid=jzcDHTlwrMkLjbnFc+fR2A==" target="_blank" class="cert-verify"><i class="fas fa-certificate"></i> Verify</a>
-</div>
-<div class="cert-item">
-<div class="cert-info">
-<p class="cert-name">Information Technology Specialist in JavaScript</p>
-<span class="card-date">April 2024</span>
-</div>
-<a href="https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=469&cvid=nM5ctPEtgRU21fFYH0PUhg==" target="_blank" class="cert-verify"><i class="fas fa-certificate"></i> Verify</a>
-</div>
-<div class="cert-item">
-<div class="cert-info">
-<p class="cert-name">Information Technology Specialist in HTML and CSS</p>
-<span class="card-date">April 2023</span>
-</div>
-<a href="https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=468&cvid=xlOC5T0XIRBMLJ1AZmBClw==" target="_blank" class="cert-verify"><i class="fas fa-certificate"></i> Verify</a>
-</div>
-</div>
-</div>
+    <section id="expertise" class="expertise-section">
+      <h2 class="section-title">Additional Interests & Expertise</h2>
+      <div id="expertise-container"></div>
+    </section>
 
-<div class="cert-category">
-<h3 class="cert-title"><i class="fas fa-laptop-code"></i>Programming Languages</h3>
-<div class="cert-list">
-<div class="cert-item">
-<div class="cert-info">
-<p class="cert-name">Information Technology Specialist in Java</p>
-<span class="card-date">April 2024</span>
-</div>
-<a href="https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=472&cvid=lZX9HAYn2P3LM07Rhor1tQ==" target="_blank" class="cert-verify"><i class="fas fa-certificate"></i> Verify</a>
-</div>
-<div class="cert-item">
-<div class="cert-info">
-<p class="cert-name">Information Technology Specialist in Python</p>
-<span class="card-date">May 2023</span>
-</div>
-<a href="https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=471&cvid=Hrcz+nby2V6GGqDAbL8R0w==" target="_blank" class="cert-verify"><i class="fas fa-certificate"></i> Verify</a>
-</div>
-</div>
-</div>
+    <section id="contact" class="contact-section">
+      <h2 class="section-title">Get in touch</h2>
+      <div class="contact-grid">
+        <a href="mailto:danielchrobak12@gmail.com" class="contact-card"><i class="fas fa-envelope"></i><span>danielchrobak12@gmail.com</span></a>
+        <a href="tel:+17739692393" class="contact-card"><i class="fas fa-phone"></i><span>(773) 969-2393</span></a>
+        <a href="https://github.com/DanielChrobak" target="_blank" class="contact-card"><i class="fab fa-github"></i><span>GitHub</span></a>
+        <a href="https://linkedin.com/in/danielchrobak12" target="_blank" class="contact-card"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+      </div>
+    </section>
 
-<div class="cert-category">
-<h3 class="cert-title"><i class="fas fa-drafting-compass"></i>CAD & Design</h3>
-<div class="cert-list">
-<div class="cert-item">
-<div class="cert-info">
-<p class="cert-name">Autodesk Certified User: Inventor - Imperial</p>
-<span class="card-date">March 2023</span>
-</div>
-<a href="https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=151&cvid=oouVIRv1Yjh4q4zkboRPPg==" target="_blank" class="cert-verify"><i class="fas fa-certificate"></i> Verify</a>
-</div>
-<div class="cert-item">
-<div class="cert-info">
-<p class="cert-name">Autodesk Certified User: Revit for Architecture - Imperial</p>
-<span class="card-date">April 2022</span>
-</div>
-<a href="https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=199&cvid=px+7oJRYbO2svjN9kfWU5A==" target="_blank" class="cert-verify"><i class="fas fa-certificate"></i> Verify</a>
-</div>
-<div class="cert-item">
-<div class="cert-info">
-<p class="cert-name">Autodesk Certified User: AutoCAD</p>
-<span class="card-date">October 2021</span>
-</div>
-<a href="https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&format=pdf&id=150" target="_blank" class="cert-verify"><i class="fas fa-certificate"></i> Verify</a>
-</div>
-</div>
-</div>
+    <footer class="footer">
+      <p>&copy; 2026 Daniel Chrobak | Full Stack Developer</p>
+    </footer>
+  </main>
 
-<div class="cert-category">
-<h3 class="cert-title"><i class="fas fa-file-powerpoint"></i>Microsoft Office</h3>
-<div class="cert-list">
-<div class="cert-item">
-<div class="cert-info">
-<p class="cert-name">Microsoft PowerPoint (Office 2019)</p>
-<span class="card-date">March 2022</span>
-</div>
-<a href="https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=421&cvid=cFwbxuvqCwaGNAzZAuw39w==" target="_blank" class="cert-verify"><i class="fas fa-certificate"></i> Verify</a>
-</div>
-</div>
-</div>
-</section>
+  <div id="modal" class="modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
 
-<section id="education" class="education-section">
-<h2 class="section-title">Education</h2>
-<div class="card">
-<div class="card-header">
-<div>
-<h3 class="card-subtitle">University of Illinois at Urbana-Champaign</h3>
-<p class="card-title">Bachelor of Science - Information Sciences & Data Science</p>
-</div>
-<span class="card-date">Expected 2026</span>
-</div>
-<p class="card-description">Focus on network infrastructure, web development, data analysis, and system architecture. Active involvement in technical projects and entrepreneurial ventures.</p>
-</div>
-<div class="card">
-<div class="card-header">
-<div>
-<h3 class="card-subtitle">Moraine Valley Community College</h3>
-<p class="card-title">Associate of Applied Science - IT Security Specialist Program</p>
-</div>
-<span class="card-date">2024 - 2025</span>
-</div>
-<p class="card-description">Completed coursework in network security, system administration, cybersecurity fundamentals, and network infrastructure.</p>
-</div>
-</section>
-
-<section id="expertise" class="expertise-section">
-<h2 class="section-title">Additional Expertise</h2>
-<div class="expertise-card card">
-<div class="expertise-icon"><i class="fas fa-broadcast-tower"></i></div>
-<div>
-<h3 class="expertise-title">Wireless Network Architecture & RF Engineering</h3>
-<p class="card-description">Comprehensive expertise in designing enterprise wireless networks including site surveys, RF planning, channel optimization, and coverage analysis. Specialized in deploying high-density WiFi environments with proper interference mitigation and roaming optimization.</p>
-</div>
-</div>
-<div class="expertise-card card">
-<div class="expertise-icon"><i class="fas fa-users"></i></div>
-<div>
-<h3 class="expertise-title">Technical Community Leadership & Mentorship</h3>
-<p class="card-description">Extensive experience leading Discord technical communities focused on networking, wireless infrastructure, and web development. Provide mentorship on router/switch configuration, AP deployment, network troubleshooting, and infrastructure optimization.</p>
-</div>
-</div>
-<div class="expertise-card card">
-<div class="expertise-icon"><i class="fas fa-server"></i></div>
-<div>
-<h3 class="expertise-title">Server Infrastructure & Hardware</h3>
-<p class="card-description">Deep knowledge of enterprise server hardware including Dell PowerEdge systems, processor selection, RAID configuration, upgrade planning, and cost-effective sourcing strategies for self-hosted infrastructure.</p>
-</div>
-</div>
-<div class="expertise-card card">
-<div class="expertise-icon"><i class="fas fa-desktop"></i></div>
-<div>
-<h3 class="expertise-title">GPU Virtualization & System Architecture</h3>
-<p class="card-description">Deep expertise in GPU partitioning, hypervisor configuration, and virtual machine optimization. Specialized in developing tools that enable advanced GPU virtualization capabilities across diverse hardware platforms.</p>
-</div>
-</div>
-<div class="expertise-card card">
-<div class="expertise-icon"><i class="fas fa-car"></i></div>
-<div>
-<h3 class="expertise-title">Automotive Technology</h3>
-<p class="card-description">Extensive hands-on experience with automotive maintenance, repair, and modification. Skilled in diagnostics, engine maintenance, body work, and performance upgrades.</p>
-</div>
-</div>
-</section>
-
-<section id="contact" class="contact-section">
-<h2 class="section-title">Get in touch</h2>
-<div class="contact-grid">
-<a href="mailto:danielchrobak12@gmail.com" class="contact-card"><i class="fas fa-envelope"></i><span>danielchrobak12@gmail.com</span></a>
-<a href="tel:+17089206630" class="contact-card"><i class="fas fa-phone"></i><span>(708) 920-6630</span></a>
-<a href="https://github.com/DanielChrobak" target="_blank" class="contact-card"><i class="fab fa-github"></i><span>GitHub</span></a>
-<a href="https://linkedin.com/in/danielchrobak12" target="_blank" class="contact-card"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
-</div>
-</section>
-
-<footer class="footer">
-<p>&copy; 2025 Daniel Chrobak | Network Infrastructure Specialist & Full Stack Developer</p>
-</footer>
-</main>
-
-<div id="modal" class="modal">
-<div class="modal-container">
-<div class="modal-header">
-<h2 class="modal-title" id="modalTitle"></h2>
-<button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
-</div>
-<div class="modal-body" id="modalBody"></div>
-</div>
-</div>
-
-<script>
-const phrases=["Network Infrastructure Specialist","Wireless Network Engineer","Full Stack Developer","Enterprise WiFi Architect"];
-let pIdx=0,cIdx=0,isDel=false;
-const typeEl=document.querySelector('.typing-text');
-function type(){
-const cur=phrases[pIdx];
-isDel?typeEl.textContent=cur.substring(0,cIdx--):(typeEl.textContent=cur.substring(0,++cIdx));
-let spd=isDel?50:100;
-if(!isDel&&cIdx===cur.length){spd=2000;isDel=true}
-else if(isDel&&cIdx===0){isDel=false;pIdx=(pIdx+1)%phrases.length;spd=500}
-setTimeout(type,spd)
-}
-document.addEventListener('DOMContentLoaded',type);
-
-const track=document.getElementById('techTrack');
-if(track){
-track.innerHTML+=track.innerHTML;
-let pos=0;
-function scroll(){
-pos+=0.5;
-if(pos>=track.offsetWidth/2)pos=0;
-track.style.transform=`translateX(-${pos}px)`;
-requestAnimationFrame(scroll)
-}
-scroll()
-}
-
-const links=document.querySelectorAll('.nav-link'),sects=document.querySelectorAll('section');
-window.addEventListener('scroll',()=>{
-let cur='';
-sects.forEach(s=>{if(pageYOffset>=s.offsetTop-200)cur=s.id});
-links.forEach(l=>{
-l.classList.remove('active');
-if(l.getAttribute('href').substring(1)===cur)l.classList.add('active')
-})
-});
-
-const toggle=document.querySelector('.mobile-menu-toggle'),side=document.querySelector('.sidebar');
-toggle.addEventListener('click',()=>side.classList.toggle('active'));
-document.addEventListener('click',e=>{
-if(!side.contains(e.target)&&!toggle.contains(e.target))side.classList.remove('active')
-});
-
-const cv=document.getElementById('particles-canvas'),ctx=cv.getContext('2d');
-cv.width=innerWidth;cv.height=innerHeight;
-const parts=[];
-class Part{
-constructor(){
-this.x=Math.random()*cv.width;
-this.y=Math.random()*cv.height;
-this.vx=(Math.random()-.5)*.5;
-this.vy=(Math.random()-.5)*.5;
-this.r=Math.random()*2
-}
-update(){
-this.x+=this.vx;this.y+=this.vy;
-if(this.x<0||this.x>cv.width)this.vx*=-1;
-if(this.y<0||this.y>cv.height)this.vy*=-1
-}
-draw(){
-ctx.beginPath();
-ctx.arc(this.x,this.y,this.r,0,Math.PI*2);
-ctx.fillStyle='#4d9d9d';
-ctx.fill()
-}
-}
-for(let i=0;i<100;i++)parts.push(new Part());
-function anim(){
-ctx.clearRect(0,0,cv.width,cv.height);
-parts.forEach(p=>{p.update();p.draw()});
-requestAnimationFrame(anim)
-}
-anim();
-addEventListener('resize',()=>{cv.width=innerWidth;cv.height=innerHeight});
-
-const modalData={
-wireless:{title:"Commercial Wireless Network Infrastructure",sections:[
-{h:"Overview",p:"End-to-end design and deployment of enterprise-grade wireless networks for commercial venues including bars, restaurants, and high-traffic locations. This comprehensive service encompasses site surveys, RF planning, equipment selection, installation, configuration, and ongoing network management."},
-{h:"Site Survey & RF Planning",ul:["Conduct comprehensive site surveys to assess coverage requirements, obstacles, and interference sources","Perform RF analysis using spectrum analyzers and WiFi survey tools to identify optimal AP placement","Create heat maps showing predicted coverage, signal strength, and capacity for each deployment location","Analyze building materials, layout, and user density to determine access point quantity and placement","Plan channel assignments and power settings to minimize interference and maximize throughput","Document site conditions, measurements, and recommendations in detailed survey reports"]},
-{h:"Network Design & Architecture",p:"Design scalable network topology with proper VLAN segmentation separating guest WiFi, management interfaces, and backend infrastructure. Implement security policies including WPA3 encryption, guest portal authentication, and bandwidth management. Configure QoS policies to prioritize critical traffic and ensure consistent performance during peak usage. Select appropriate hardware including enterprise routers with failover capabilities, managed switches with VLAN support and PoE for access points, and high-density WiFi 6 access points optimized for the venue environment."},
-{h:"Equipment Selection & Configuration",ul:["Research and select commercial-grade routers with appropriate WAN throughput and feature sets","Choose managed switches with sufficient PoE budget, port density, and management capabilities","Select access points based on coverage area, user density, WiFi standards, and mounting options","Configure router firewall rules, NAT policies, DHCP scopes, and DNS settings","Implement VLAN tagging on switches for network segmentation and traffic isolation","Optimize access point settings including channel width, transmit power, band steering, and roaming thresholds","Enable centralized management platforms for unified configuration and monitoring across deployments"]},
-{h:"Installation & Deployment",p:"Physically install network equipment with professional cable management, proper mounting, and weatherproofing where necessary. Run structured cabling following industry standards with cable testing and labeling. Mount access points in optimal locations considering both RF performance and aesthetic requirements. Configure guest portals with venue branding, terms of service acceptance, and optional social media integration. Test thoroughly including roaming behavior, throughput validation, and load testing before declaring deployments complete."},
-{h:"Monitoring & Maintenance",ul:["Deploy network monitoring systems tracking uptime, bandwidth utilization, and device health","Implement alerting for critical issues including device failures, degraded performance, and security events","Create dashboards showing real-time metrics including connected users, throughput, and signal quality","Perform regular firmware updates on routers, switches, and access points to maintain security and performance","Analyze usage patterns to identify capacity constraints and opportunities for optimization","Provide technical support for connectivity issues, performance problems, and configuration changes","Maintain comprehensive documentation including network diagrams, configuration backups, and change logs"]},
-{h:"Business Impact",p:"These deployments enable venues to provide reliable, high-speed WiFi enhancing customer experience and increasing dwell time. Network analytics provide insights into patron behavior and usage patterns. Revenue sharing arrangements make enterprise-grade WiFi accessible to small businesses without upfront capital investment."}
-]},
-platform:{title:"Network Management & Analytics Platform",sections:[
-{h:"Overview",p:"A comprehensive Flask-based web platform designed for managing commercial wireless network deployments. This system provides centralized management for partner coordination, installation tracking, network monitoring, performance analytics, and automated reporting across multiple deployment locations."},
-{h:"Partner Management System",ul:["Role-based authentication with separate access levels for administrators, partners, and technicians","Partner dashboard showing assigned installations, earnings tracking, and performance metrics","Installation assignment workflow with status tracking from planning through completion","Document management for contracts, site surveys, network diagrams, and configuration records","Automated email notifications for installation milestones and system alerts","Revenue calculation and reporting based on network performance and usage metrics"]},
-{h:"Network Monitoring & Analytics",p:"Real-time monitoring dashboard displays device status, uptime metrics, bandwidth utilization, and connected user counts across all deployment locations. Interactive charts built with Chart.js visualize trends in network performance, usage patterns, and capacity utilization over time. Automated alerting system monitors for device failures, performance degradation, unusual traffic patterns, and security events. Alerts are sent via email and displayed prominently in the dashboard interface."},
-{h:"Deployment Visualization",ul:["Interactive map interface using Leaflet.js displays all deployment locations geographically","Color-coded markers indicate installation status, network health, and performance levels","Click markers to view detailed information including equipment inventory, configuration details, and metrics","Coverage area overlays show predicted and measured WiFi coverage for each location","Filter and search functionality to quickly locate specific deployments or identify problem areas"]},
-{h:"Technical Implementation",p:"Built on Python Flask with SQLAlchemy ORM managing a relational database schema for users, installations, locations, devices, and performance metrics. Implements secure authentication using Flask-Login with Werkzeug password hashing and session management. Front-end uses Bootstrap 5 for responsive design working seamlessly across desktop and mobile devices. JavaScript handles dynamic interactions, AJAX calls for real-time updates, and interactive charting with Chart.js."},
-{h:"API Integration",ul:["RESTful API endpoints enable integration with network equipment management interfaces","Automated data collection from routers, switches, and access points via SNMP and vendor APIs","Mobile app integration allows partners to view installations and metrics on smartphones","Webhook support for external monitoring systems and alerting platforms","Bulk data export functionality for detailed analysis and reporting"]},
-{h:"Business Impact",p:"This platform streamlines wireless infrastructure operations by automating partner management, reducing administrative overhead, and providing transparency into network performance. Centralized monitoring enables proactive issue resolution before users are impacted. Data-driven insights optimize deployment strategies and maximize revenue per location."}
-]},
-gpu:{title:"GPU Virtualization & Partitioning Tool",sections:[
-{h:"Overview",p:"A streamlined PowerShell tool for creating and managing Hyper-V virtual machines with integrated GPU partitioning and driver injection. This unified solution consolidates VM creation, GPU resource allocation, and NVIDIA driver management into a single, efficient terminal interface, democratizing GPU virtualization beyond enterprise-exclusive solutions."},
-{h:"Core Capabilities",ul:["Automated VM creation with optimized Generation 2 configurations and TPM 2.0 support for Windows 11","Configurable GPU resource allocation (1-100% per VM) with intelligent partition value calculations","Direct NVIDIA driver installation into VM disk images without manual intervention","Driver synchronization system to keep VM drivers aligned with host GPU driver versions","Interactive terminal UI with color-coded logging (INFO, SUCCESS, WARN, ERROR) and real-time feedback","Complete VM lifecycle management from creation through configuration and maintenance","Smart partition detection with automatic mounting and safe cleanup procedures","Hardware-agnostic design supporting consumer and professional NVIDIA GPUs"]},
-{h:"Technical Architecture",p:"Built entirely in PowerShell with direct integration to Hyper-V management APIs. Implements sophisticated GPU partition calculations using mathematical formulas to optimize VRAM, encode/decode, and compute resource allocation. The driver injection system safely mounts VM virtual hard disks, locates NVIDIA driver repositories from the host system, and copies drivers with proper file permissions. Each operation includes comprehensive error handling, user confirmation prompts for destructive actions, and detailed logging with timestamps."},
-{h:"Impact & Applications",p:"This tool enables GPU-accelerated virtual machines for gaming, machine learning, CAD workstations, and graphics-intensive applications without requiring expensive enterprise GPU solutions like NVIDIA GRID. It democratizes GPU virtualization technology by making it accessible on consumer hardware, opening possibilities for remote gaming rigs, multi-user systems, and development environments with GPU acceleration. By automating complex configurations, the tool reduces setup time from hours to minutes."},
-{h:"GitHub Repository",p:"Full source code and documentation: <a href='https://github.com/DanielChrobak/Hyper-V-GPU-Manager' target='_blank' style='color:var(--accent-primary);font-weight:600'>github.com/DanielChrobak/Hyper-V-GPU-Partitioner</a>"}
-]}
-};
-
-function openModal(type){
-const m=document.getElementById('modal'),d=modalData[type];
-document.getElementById('modalTitle').textContent=d.title;
-let html='';
-d.sections.forEach(s=>{
-html+='<div class="modal-section"><h3>'+s.h+'</h3>';
-if(s.p)html+='<p>'+s.p+'</p>';
-if(s.ul){
-html+='<ul class="list-styled">';
-s.ul.forEach(i=>html+='<li>'+i+'</li>');
-html+='</ul>'
-}
-html+='</div>'
-});
-document.getElementById('modalBody').innerHTML=html;
-m.classList.add('active');
-document.body.style.overflow='hidden'
-}
-
-function closeModal(){
-const m=document.getElementById('modal');
-m.classList.remove('active');
-document.body.style.overflow=''
-}
-
-document.getElementById('modal').addEventListener('click',e=>{
-if(e.target.id==='modal')closeModal()
-});
-
-document.addEventListener('keydown',e=>{
-if(e.key==='Escape')closeModal()
-});
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
