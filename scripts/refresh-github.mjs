@@ -1,10 +1,9 @@
 import { writeFile } from "node:fs/promises";
 
-// Explicit public-only allowlist. Never enumerate or expose private repositories.
+// Explicit public-only allowlist for the projects featured in the CV.
 const names = [
   "Hyper-V-GPU-Paravirtualization-Manager",
   "Python-Microphone-Input-Forwarder",
-  "Python-Ledger",
 ];
 const headers = {
   Accept: "application/vnd.github+json",

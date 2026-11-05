@@ -8,7 +8,7 @@
     <title>Daniel Chrobak — Curriculum Vitae</title>
     <meta
       name="description"
-      content="Chicago-based full-stack developer and systems builder. Explore Daniel Chrobak's work in GPU virtualization, real-time streaming, Python, and web applications."
+      content="Daniel Chrobak, Chicago-based Founder &amp; CTO of SlipStream, building Windows-to-browser remote desktop software and open-source Hyper-V GPU virtualization tools."
     />
     <link
       rel="canonical"
@@ -18,7 +18,7 @@
     <meta property="og:title" content="Daniel Chrobak — Curriculum Vitae" />
     <meta
       property="og:description"
-      content="Software, systems, and the connections between them. Selected work, experience, and credentials."
+      content="Building SlipStream: native Windows capture, GPU video encoding, and real-time browser streaming. Selected systems projects, experience, and credentials."
     />
     <meta
       property="og:url"
@@ -39,11 +39,12 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Daniel Chrobak",
-        "jobTitle": "Full-stack developer",
+        "jobTitle": "Founder & CTO",
         "url": "https://danielchrobak.github.io/Curriculum-Vitae/",
         "sameAs": [
           "https://github.com/DanielChrobak",
-          "https://www.linkedin.com/in/danielchrobak12/"
+          "https://www.linkedin.com/in/danielchrobak12/",
+          "https://x.com/imwardeb"
         ],
         "homeLocation": { "@type": "City", "name": "Chicago, Illinois" },
         "alumniOf": {
@@ -75,7 +76,7 @@
         aria-label="Daniel Chrobak, introduction"
         ><span class="monogram" aria-hidden="true">dc<span>.</span></span
         ><span class="identity-name">Daniel Chrobak</span
-        ><span class="identity-role">Developer &amp; systems builder</span></a
+        ><span class="identity-role">Founder &amp; CTO</span></a
       >
       <div class="location">
         <span class="location-dot" aria-hidden="true"></span> Chicago, Illinois
@@ -136,23 +137,26 @@
     <main id="main">
       <section id="about" class="hero" aria-labelledby="intro-title">
         <div class="section-kicker">
-          <span>Independent thinking. Practical software.</span
+          <span>Independent builder. Systems to product.</span
           ><span class="edition">CV / 2026</span>
         </div>
-        <p class="eyebrow">FULL-STACK DEVELOPER &amp; SYSTEMS BUILDER</p>
+        <p class="eyebrow">FOUNDER &amp; CTO · SLIPSTREAM</p>
         <h1 id="intro-title">
           Daniel<br />
           Chrobak<span class="accent">.</span>
         </h1>
         <div class="hero-intro">
           <p class="hero-statement">
-            Software, systems, and the<br class="desktop-break" />
-            connections between them.
+            Native performance.<br class="desktop-break" />
+            A browser experience.
           </p>
           <p class="hero-description">
-            I build web applications and tools that connect software to the
-            hardware beneath it. My work spans real-time desktop streaming, GPU
-            virtualization, and self-hosted infrastructure.
+            I’m the founder and CTO of SlipStream, my full-time project: a
+            Windows-to-browser remote desktop application with a C++23 host and
+            TypeScript client. I built its capture-to-browser pipeline around
+            Windows desktop capture, GPU video encoding, QUIC/WebTransport, and
+            WebCodecs. I also build open-source tools for Hyper-V GPU
+            virtualization and remote audio.
           </p>
         </div>
         <div class="hero-actions">
@@ -183,8 +187,9 @@
             </h2>
           </div>
           <p>
-            From sharing a GPU to connecting a remote desktop. A selection of
-            the projects I’ve built and maintained.
+            SlipStream is my current focus, supported by work in GPU
+            virtualization and remote audio. I build the native tools, browser
+            interfaces, and infrastructure that connect them.
           </p>
         </div>
         <div class="project-toolbar" hidden>
@@ -192,23 +197,128 @@
             <button type="button" data-filter="all" aria-pressed="true">
               All work</button
             ><button type="button" data-filter="systems" aria-pressed="false">
-              Systems</button
-            ><button type="button" data-filter="web" aria-pressed="false">
-              Web applications
+              Desktop &amp; virtualization</button
+            ><button type="button" data-filter="audio" aria-pressed="false">
+              Audio
             </button>
           </div>
           <span id="project-count" role="status" aria-live="polite"
-            >4 projects</span
+            >3 projects</span
           >
         </div>
         <div class="projects-list">
           <article
             class="project project-featured"
-            id="project-gpu"
+            id="project-slipstream"
             data-category="systems"
           >
             <div class="project-topline">
               <span class="project-index">PROJECT / 01</span
+              ><span class="project-signal"
+                >Current focus · Private source</span
+              >
+            </div>
+            <div class="project-layout">
+              <div class="project-copy">
+                <p class="small-label">
+                  REAL-TIME MEDIA &amp; BROWSER ENGINEERING
+                </p>
+                <h3>
+                  Your desktop.<br />
+                  Through a browser.
+                </h3>
+                <p class="project-name">SlipStream</p>
+                <p>
+                  Building a Windows-to-browser remote desktop application with
+                  a C++23 host and TypeScript client. Captures the desktop,
+                  encodes video on compatible GPUs, and streams over
+                  QUIC/WebTransport to browser decoding and rendering, with
+                  multi-monitor controls, remote input, audio, clipboard and
+                  file exchange, account permissions, and Windows service
+                  packaging.
+                </p>
+                <ul class="tags" aria-label="Technologies">
+                  <li>C++23</li>
+                  <li>TypeScript</li>
+                  <li>QUIC</li>
+                  <li>WebTransport</li>
+                  <li>WebCodecs</li>
+                </ul>
+                <a
+                  class="text-link"
+                  href="https://danielchrobak.github.io/SlipStream-Website/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Visit SlipStream website <span aria-hidden="true">↗</span></a
+                >
+              </div>
+              <div
+                class="stream-visual"
+                role="img"
+                aria-label="Architecture illustration: Windows capture and GPU encoding send video over WebTransport to a browser decoder and renderer; input returns to the host."
+              >
+                <div class="visual-label">SLIPSTREAM / DELIVERY PATH</div>
+                <div class="stream-window">
+                  <div class="window-bar">
+                    <span aria-hidden="true">● ● ●</span
+                    ><span>Windows → browser</span>
+                  </div>
+                  <div class="stream-mark" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <span class="stream-caption"
+                    >A native host. A browser client.</span
+                  >
+                </div>
+                <div class="stream-path">
+                  <span>Capture</span><span aria-hidden="true">→</span
+                  ><span>Encode</span><span aria-hidden="true">→</span
+                  ><span>Transport</span><span aria-hidden="true">→</span
+                  ><span>Render</span>
+                </div>
+                <div class="visual-footer">
+                  <span>VIDEO OUT / INPUT BACK</span><span>C++ ↔ TS</span>
+                </div>
+              </div>
+            </div>
+            <details class="project-details" id="slipstream-details">
+              <summary>
+                Behind the project <span aria-hidden="true">+</span>
+              </summary>
+              <div class="detail-grid">
+                <div>
+                  <h4>The problem</h4>
+                  <p>
+                    Make a Windows desktop interactive in a browser while
+                    coordinating capture, GPU encoding, network delivery,
+                    decoding, audio, and input. Display changes, decoder
+                    backlogs, and interrupted connections need recovery across
+                    the native and browser components.
+                  </p>
+                </div>
+                <div>
+                  <h4>The implementation</h4>
+                  <p>
+                    DXGI/WGC capture, NVIDIA NVENC, AMD AMF, Intel QSV, and
+                    Media Foundation encoding paths; MsQuic/WebTransport
+                    delivery; WebCodecs decoding and WebGPU/WebGL rendering.
+                    Adaptive bitrate, frame pacing, multi-monitor controls,
+                    account permissions, and Windows service packaging support
+                    the complete application.
+                  </p>
+                </div>
+              </div>
+              <p class="detail-note">
+                Source repository is private. Codec, HDR, and hardware paths
+                depend on host and browser capabilities. Diagrams illustrate
+                architecture; they do not represent a live session or measured
+                end-to-end latency.
+              </p>
+            </details>
+          </article>
+          <article class="project" id="project-gpu" data-category="systems">
+            <div class="project-topline">
+              <span class="project-index">PROJECT / 02</span
               ><span
                 class="project-signal"
                 title="GitHub snapshot: <!-- GITHUB_DATE -->"
@@ -228,9 +338,11 @@
                   Hyper-V GPU Paravirtualization Manager
                 </p>
                 <p>
-                  Share a Windows host’s GPU with virtual machines. A PowerShell
-                  toolkit with a native desktop interface for GPU assignment,
-                  driver synchronization, and VM management.
+                  An open-source PowerShell/WPF application for sharing a
+                  Windows host’s GPU with Hyper-V virtual machines. Handles GPU
+                  assignment, verified guest driver synchronization, and
+                  interrupted-operation recovery through desktop, console, and
+                  headless workflows.
                 </p>
                 <ul class="tags" aria-label="Technologies">
                   <li>PowerShell</li>
@@ -296,204 +408,68 @@
                 <div>
                   <h4>The implementation</h4>
                   <p>
-                    Device discovery, per-adapter assignment, driver-plan
-                    previews, verified copies, and interrupted-operation
-                    recovery. Desktop, console, and headless workflows share the
-                    same PowerShell tooling.
+                    Device discovery, per-adapter assignment, and driver-package
+                    planning for NVIDIA, AMD, and Intel. SHA-256 checks, staged
+                    copies, and a recovery journal protect guest driver updates.
+                    Desktop, console, and headless workflows share the same
+                    PowerShell tooling.
                   </p>
                 </div>
               </div>
               <p class="detail-note">
                 Support depends on the GPU, host driver, and guest Windows
-                version. The repository documents prerequisites and community
-                foundations.
+                version. Built on the community GPU-PV method; the repository
+                documents prerequisites and community foundations.
               </p>
             </details>
           </article>
           <article
-            class="project"
-            id="project-slipstream"
-            data-category="systems"
+            class="project project-compact"
+            id="project-audio"
+            data-category="audio"
           >
             <div class="project-topline">
-              <span class="project-index">PROJECT / 02</span
-              ><span class="project-signal">Independent project</span>
-            </div>
-            <div class="project-layout">
-              <div class="project-copy">
-                <p class="small-label">
-                  REAL-TIME MEDIA &amp; BROWSER ENGINEERING
-                </p>
-                <h3>
-                  Your desktop.<br />
-                  Through a browser.
-                </h3>
-                <p class="project-name">SlipStream</p>
-                <p>
-                  A Windows-to-browser remote desktop application, connecting
-                  native capture and GPU video encoding with a TypeScript
-                  client. Built around display control, audio, input, and file
-                  exchange.
-                </p>
-                <ul class="tags" aria-label="Technologies">
-                  <li>C++</li>
-                  <li>TypeScript</li>
-                  <li>WebTransport</li>
-                  <li>WebCodecs</li>
-                </ul>
-                <a
-                  class="text-link"
-                  href="#slipstream-details"
-                  data-open-details="slipstream-details"
-                  >Read project notes <span aria-hidden="true">↘</span></a
-                >
-              </div>
-              <div
-                class="stream-visual"
-                role="img"
-                aria-label="Architecture illustration: Windows capture and GPU encoding send video over WebTransport to a browser decoder and renderer; input returns to the host."
+              <span class="project-index">PROJECT / 03</span
+              ><span
+                class="project-signal"
+                title="GitHub snapshot: <!-- GITHUB_DATE -->"
+                >☆
+                <!-- MIC_STARS -->
+                stars</span
               >
-                <div class="visual-label">SLIPSTREAM / DELIVERY PATH</div>
-                <div class="stream-window">
-                  <div class="window-bar">
-                    <span aria-hidden="true">● ● ●</span
-                    ><span>Windows → browser</span>
-                  </div>
-                  <div class="stream-mark" aria-hidden="true">
-                    <span></span><span></span><span></span>
-                  </div>
-                  <span class="stream-caption"
-                    >A native host. A browser client.</span
-                  >
-                </div>
-                <div class="stream-path">
-                  <span>Capture</span><span aria-hidden="true">→</span
-                  ><span>Encode</span><span aria-hidden="true">→</span
-                  ><span>Transport</span><span aria-hidden="true">→</span
-                  ><span>Render</span>
-                </div>
-                <div class="visual-footer">
-                  <span>VIDEO OUT / INPUT BACK</span><span>C++ ↔ TS</span>
-                </div>
-              </div>
             </div>
-            <details class="project-details" id="slipstream-details">
+            <div class="compact-symbol" aria-hidden="true">▂ ▅ █ ▆ ▃ ▇ ▄</div>
+            <h3>Python Microphone Input Forwarder</h3>
+            <p>
+              Built to add microphone forwarding to a Sunshine/Moonlight setup
+              with GPU-partitioned Hyper-V VMs and thin clients. Paired Python
+              sender and receiver tools capture microphone audio, stream it over
+              the network, and route it into a VM’s virtual microphone, with GUI
+              and command-line interfaces.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li>Python</li>
+              <li>PyQt5</li>
+              <li>PyAudio</li>
+            </ul>
+            <a
+              class="text-link"
+              href="https://github.com/DanielChrobak/Python-Microphone-Input-Forwarder"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Explore repository <span aria-hidden="true">↗</span></a
+            >
+            <details class="project-details">
               <summary>
-                Behind the project <span aria-hidden="true">+</span>
+                Project context <span aria-hidden="true">+</span>
               </summary>
-              <div class="detail-grid">
-                <div>
-                  <h4>The problem</h4>
-                  <p>
-                    Desktop streaming crosses native Windows APIs, GPU encoders,
-                    transport, browser decoding, and user input. Each stage has
-                    its own capabilities and failure modes.
-                  </p>
-                </div>
-                <div>
-                  <h4>The implementation</h4>
-                  <p>
-                    A C++ Windows host and TypeScript/Vite client using
-                    WebTransport and WebCodecs. Hardware encoding, monitor
-                    selection, host audio, clipboard and file exchange connect
-                    the native and browser experiences.
-                  </p>
-                </div>
-              </div>
-              <p class="detail-note">
-                Source repository is private. Diagrams illustrate the
-                architecture; they do not represent a live session or measured
-                performance.
+              <p>
+                Built to supply remote microphone input in a GPU-partitioned
+                Hyper-V setup using Sunshine and Moonlight. The receiver routes
+                network audio to a virtual audio device.
               </p>
             </details>
           </article>
-          <div class="project-pair">
-            <article
-              class="project project-compact"
-              id="project-audio"
-              data-category="systems"
-            >
-              <div class="project-topline">
-                <span class="project-index">PROJECT / 03</span
-                ><span
-                  class="project-signal"
-                  title="GitHub snapshot: <!-- GITHUB_DATE -->"
-                  >☆
-                  <!-- MIC_STARS -->
-                  stars</span
-                >
-              </div>
-              <div class="compact-symbol" aria-hidden="true">▂ ▅ █ ▆ ▃ ▇ ▄</div>
-              <h3>Microphone Input Forwarder</h3>
-              <p>
-                Bring microphone input from a thin client to a remote VM. Paired
-                Python sender and receiver tools with desktop and command-line
-                interfaces.
-              </p>
-              <ul class="tags" aria-label="Technologies">
-                <li>Python</li>
-                <li>PyQt5</li>
-                <li>PyAudio</li>
-              </ul>
-              <a
-                class="text-link"
-                href="https://github.com/DanielChrobak/Python-Microphone-Input-Forwarder"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Explore repository <span aria-hidden="true">↗</span></a
-              >
-              <details class="project-details">
-                <summary>
-                  Project context <span aria-hidden="true">+</span>
-                </summary>
-                <p>
-                  Built to supply remote microphone input in a GPU-partitioned
-                  Hyper-V setup using Sunshine and Moonlight. The receiver
-                  routes network audio to a virtual audio device.
-                </p>
-              </details>
-            </article>
-            <article
-              class="project project-compact"
-              id="project-ledger"
-              data-category="web"
-            >
-              <div class="project-topline">
-                <span class="project-index">PROJECT / 04</span
-                ><span class="project-signal">Web application</span>
-              </div>
-              <div class="compact-symbol ledger-symbol" aria-hidden="true">
-                + / −
-              </div>
-              <h3>Python Ledger</h3>
-              <p>
-                A Flask application for organizing accounts and transactions,
-                with statement exports and an account management interface.
-              </p>
-              <ul class="tags" aria-label="Technologies">
-                <li>Python</li>
-                <li>Flask</li>
-                <li>SQL</li>
-                <li>Socket.IO</li>
-              </ul>
-              <a
-                class="text-link"
-                href="https://github.com/DanielChrobak/Python-Ledger"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Explore repository <span aria-hidden="true">↗</span></a
-              >
-              <details class="project-details">
-                <summary>
-                  Project context <span aria-hidden="true">+</span>
-                </summary>
-                <p>
-                  Explores authenticated web workflows, transaction history,
-                  live interface updates, and PDF/CSV statement exports.
-                </p>
-              </details>
-            </article>
-          </div>
         </div>
         <div class="section-footer">
           <span
@@ -517,33 +493,63 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">03 / EXPERIENCE</p>
-            <h2 id="experience-title">Learning by building.</h2>
+            <h2 id="experience-title">Building across systems.</h2>
           </div>
           <p>
-            Independent development, hands-on infrastructure, and technical
-            community work.
+            Current product engineering, open-source Windows tooling, and the
+            infrastructure experience behind them.
           </p>
         </div>
         <div class="experience-list">
           <article class="experience">
             <div class="experience-date">
-              2025 — Present<span>Entrepreneurship</span>
+              Jan 2025 — Present<span>Current full-time focus</span>
             </div>
             <div>
-              <h3>Founder &amp; Developer</h3>
-              <p class="experience-org">Wireless Revenue</p>
+              <h3>Founder &amp; CTO</h3>
+              <p class="experience-org">SlipStream</p>
               <p>
-                Developing a wireless infrastructure venture and the web tools
-                behind it.
+                Founded SlipStream and develop it full time: a
+                Windows-to-browser remote desktop application with a C++23 host
+                and TypeScript client.
               </p>
               <ul class="prose-list">
                 <li>
-                  Built a Flask dashboard for network monitoring and partner
-                  coordination.
+                  Built the capture-to-browser pipeline around Windows desktop
+                  capture, GPU video encoding, QUIC/WebTransport delivery, and
+                  WebCodecs decoding.
                 </li>
                 <li>
-                  Work with router, switch, and access point configuration while
-                  developing wireless deployment opportunities.
+                  Developed multi-monitor controls, remote input, audio,
+                  clipboard and file exchange, and account permissions.
+                </li>
+                <li>
+                  Implement adaptive streaming, reconnect and media recovery,
+                  diagnostics, and Windows service packaging.
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="experience">
+            <div class="experience-date">
+              Jan 2025 — Apr 2026<span>Wireless infrastructure venture</span>
+            </div>
+            <div>
+              <h3>Founder &amp; CTO</h3>
+              <p class="experience-org">Wireless Revenue</p>
+              <p>
+                Founded a wireless infrastructure venture and built its software
+                tools for network monitoring and partner coordination.
+              </p>
+              <ul class="prose-list">
+                <li>
+                  Developed applications for network monitoring and partner
+                  coordination, connecting software with deployment needs.
+                </li>
+                <li>
+                  Configured routers and access points, managed server
+                  infrastructure, and integrated hardware for wireless
+                  deployments.
                 </li>
               </ul>
             </div>
@@ -593,22 +599,22 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">04 / CAPABILITIES</p>
-            <h2 id="skills-title">Across the stack.</h2>
+            <h2 id="skills-title">From capture to client.</h2>
           </div>
           <p>Tools and technologies grounded in the work above.</p>
         </div>
         <div class="capabilities">
           <article>
             <span class="capability-number">01</span>
-            <h3>Software development</h3>
+            <h3>Native &amp; browser software</h3>
             <p>
               Native applications, browser interfaces, APIs, and automation.
             </p>
             <ul class="skill-list">
               <li>C++ / CMake / vcpkg</li>
               <li>TypeScript / JavaScript / Vite</li>
-              <li>Python / Flask / SQL</li>
               <li>PowerShell / WPF / Git</li>
+              <li>Windows services / CI / diagnostics</li>
             </ul>
           </article>
           <article>
@@ -616,21 +622,21 @@
             <h3>Systems &amp; media</h3>
             <p>Where application software meets hardware and real-time data.</p>
             <ul class="skill-list">
-              <li>Hyper-V / GPU partitioning</li>
-              <li>WebTransport / WebCodecs</li>
-              <li>Hardware video encoding / FFmpeg</li>
-              <li>Windows / Linux administration</li>
+              <li>DXGI / WGC / Direct3D 11</li>
+              <li>NVENC / AMF / QSV / Media Foundation</li>
+              <li>QUIC / WebTransport / WebCodecs</li>
+              <li>WebGPU / WebGL / frame pacing</li>
             </ul>
           </article>
           <article>
             <span class="capability-number">03</span>
-            <h3>Networks &amp; hardware</h3>
-            <p>Infrastructure fundamentals and hands-on prototyping.</p>
+            <h3>Virtualization &amp; infrastructure</h3>
+            <p>GPU sharing, driver management, and hands-on networking.</p>
             <ul class="skill-list">
-              <li>TCP/IP / VLANs / DNS / DHCP</li>
-              <li>Wireless infrastructure / firewalls</li>
-              <li>Server hardware / self-hosting</li>
-              <li>ESP32 / Arduino / LoRa</li>
+              <li>Hyper-V / GPU-PV / driver synchronization</li>
+              <li>TCP/IP / VLANs / wireless networks</li>
+              <li>Windows / Linux / self-hosted servers</li>
+              <li>Python / network audio / embedded tools</li>
             </ul>
           </article>
         </div>
@@ -645,14 +651,22 @@
         <article class="education-record">
           <div>
             <span class="small-label">MORAINE VALLEY COMMUNITY COLLEGE</span>
-            <h3>Associate of Applied Science</h3>
-            <p class="experience-org">IT Security Specialist Program</p>
+            <h3>Associate of Arts and Sciences</h3>
+            <p class="experience-org">Information Technology</p>
             <p>
               Network security, systems administration, cybersecurity
               fundamentals, and network infrastructure.
             </p>
           </div>
           <span class="education-year">2025</span>
+        </article>
+        <article class="education-record">
+          <div>
+            <span class="small-label">ALAN B. SHEPARD HIGH SCHOOL</span>
+            <h3>High school</h3>
+            <p class="experience-org">Attended through 2024</p>
+          </div>
+          <span class="education-year">2024</span>
         </article>
         <div class="credential-summary">
           <div>
@@ -710,6 +724,11 @@
             target="_blank"
             rel="noopener noreferrer"
             >LinkedIn ↗</a
+          ><a
+            href="https://x.com/imwardeb"
+            target="_blank"
+            rel="noopener noreferrer"
+            >X / @imwardeb ↗</a
           ><a href="tel:+17739692393">(773) 969-2393</a
           ><button type="button" class="print-button" hidden>
             Print / Save CV <span aria-hidden="true">↗</span>
