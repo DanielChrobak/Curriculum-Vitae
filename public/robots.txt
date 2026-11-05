@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://danielchrobak.github.io/Curriculum-Vitae/sitemap.xml
