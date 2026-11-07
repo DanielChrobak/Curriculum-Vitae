@@ -2,23 +2,24 @@ export {};
 document.documentElement.classList.add("js");
 
 const menu = document.querySelector<HTMLButtonElement>(".menu-toggle");
-const sidebar = document.querySelector<HTMLElement>(".sidebar");
-const compact = matchMedia("(max-width: 760px)");
+const sitePanel = document.querySelector<HTMLElement>(".site-panel");
+const compact = matchMedia("(max-width: 960px)");
+const header = document.querySelector<HTMLElement>(".site-header");
 
 function closeMenu(restoreFocus = false) {
-  sidebar?.removeAttribute("data-open");
+  sitePanel?.removeAttribute("data-open");
   menu?.setAttribute("aria-expanded", "false");
   if (restoreFocus) menu?.focus();
 }
 
-if (menu && sidebar) {
+if (menu && sitePanel) {
   menu.hidden = false;
   menu.addEventListener("click", () => {
     const open = menu.getAttribute("aria-expanded") !== "true";
     menu.setAttribute("aria-expanded", String(open));
-    sidebar.toggleAttribute("data-open", open);
+    sitePanel.toggleAttribute("data-open", open);
   });
-  sidebar
+  sitePanel
     .querySelectorAll("a")
     .forEach((link) => link.addEventListener("click", () => closeMenu()));
   document.addEventListener("keydown", (event) => {
@@ -29,7 +30,7 @@ if (menu && sidebar) {
     if (
       compact.matches &&
       event.target instanceof Node &&
-      !sidebar.contains(event.target) &&
+      !sitePanel.contains(event.target) &&
       !menu.contains(event.target)
     )
       closeMenu();
@@ -38,7 +39,7 @@ if (menu && sidebar) {
     if (
       compact.matches &&
       event.target instanceof Node &&
-      !sidebar.contains(event.target) &&
+      !sitePanel.contains(event.target) &&
       !menu.contains(event.target)
     )
       closeMenu();
@@ -49,22 +50,27 @@ if (menu && sidebar) {
 const themeButton = document.querySelector<HTMLButtonElement>(".theme-toggle");
 if (themeButton) {
   themeButton.hidden = false;
-  const updateLabel = () =>
+  const updateTheme = () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute("content", dark ? "#16182b" : "#f5f5fa");
     themeButton.setAttribute(
       "aria-label",
-      `Switch to ${document.documentElement.dataset.theme === "light" ? "dark" : "light"} theme`,
+      `Switch to ${dark ? "light" : "dark"} theme`,
     );
-  updateLabel();
+  };
+  updateTheme();
   themeButton.addEventListener("click", () => {
     const theme =
-      document.documentElement.dataset.theme === "light" ? "dark" : "light";
+      document.documentElement.dataset.theme === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = theme;
     try {
       localStorage.setItem("cv-theme", theme);
     } catch {
       /* Theme still works when storage is unavailable. */
     }
-    updateLabel();
+    updateTheme();
   });
 }
 
@@ -128,11 +134,13 @@ const sections = [
   ...document.querySelectorAll<HTMLElement>("main > section[id]"),
 ];
 const navLinks = [
-  ...document.querySelectorAll<HTMLAnchorElement>('nav a[href^="#"]'),
+  ...document.querySelectorAll<HTMLAnchorElement>(
+    '.wordmark, nav a[href^="#"]',
+  ),
 ];
 let scrollPending = false;
 function markSection() {
-  const readingLine = compact.matches ? 130 : 100;
+  const readingLine = (header?.clientHeight ?? 0) + 32;
   let current: string | undefined = sections[0]?.id;
   for (const section of sections)
     if (section.getBoundingClientRect().top <= readingLine)
@@ -169,15 +177,18 @@ if (year) year.textContent = String(new Date().getFullYear());
 const credentials = document.querySelector<HTMLDetailsElement>(
   ".credentials-details",
 );
-let credentialsWereOpen = false;
+let credentialsWereOpen: boolean | undefined;
 window.addEventListener("beforeprint", () => {
   if (credentials) {
-    credentialsWereOpen = credentials.open;
+    credentialsWereOpen ??= credentials.open;
     credentials.open = true;
   }
 });
 window.addEventListener("afterprint", () => {
-  if (credentials) credentials.open = credentialsWereOpen;
+  if (credentials && credentialsWereOpen !== undefined) {
+    credentials.open = credentialsWereOpen;
+    credentialsWereOpen = undefined;
+  }
 });
 document
   .querySelectorAll<HTMLButtonElement>(".print-button")

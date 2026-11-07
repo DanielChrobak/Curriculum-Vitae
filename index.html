@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="dark light" />
-    <meta name="theme-color" content="#101514" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f5f5fa" />
     <title>Daniel Chrobak — Curriculum Vitae</title>
     <meta
       name="description"
@@ -55,142 +55,256 @@
     </script>
   </head>
   <body>
+    <svg
+      class="icon-library"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <symbol id="icon-external" viewBox="0 0 24 24">
+        <path d="M6 18 18 6M8 6h10v10" />
+      </symbol>
+      <symbol id="icon-down" viewBox="0 0 24 24">
+        <path d="M12 4v15m-6-6 6 6 6-6" />
+      </symbol>
+      <symbol id="icon-up" viewBox="0 0 24 24">
+        <path d="M12 20V5m-6 6 6-6 6 6" />
+      </symbol>
+      <symbol id="icon-theme" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8" />
+        <path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none" />
+      </symbol>
+      <symbol id="icon-print" viewBox="0 0 24 24">
+        <path d="M7 8V3h10v5M7 17H4V9h16v8h-3M7 14h10v7H7zm9-2h1" />
+      </symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path d="M4 8h16M4 16h16" />
+      </symbol>
+      <symbol id="icon-plus" viewBox="0 0 24 24">
+        <path d="M5 12h14m-7-7v14" />
+      </symbol>
+    </svg>
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="mobile-header">
-      <a class="wordmark" href="#about"
-        >dc<span class="accent">.</span> <span>Curriculum Vitae</span></a
-      ><button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="sidebar"
-        hidden
-      >
-        Menu <span aria-hidden="true">☰</span>
-      </button>
+    <header class="site-header">
+      <div class="masthead shell">
+        <a class="wordmark" href="#about">
+          <svg class="wordmark-symbol" viewBox="0 0 36 36" aria-hidden="true">
+            <rect x="1" y="1" width="34" height="34" fill="currentColor" />
+            <path
+              d="M8 11h7l4 4v6l-4 4H8zm20 0h-5l-4 4v6l4 4h5"
+              fill="none"
+              stroke="var(--plate-text)"
+              stroke-width="2"
+            />
+          </svg>
+          <span>Daniel Chrobak <small>Curriculum vitae</small></span>
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-panel"
+          hidden
+        >
+          Menu
+          <svg class="icon" aria-hidden="true"><use href="#icon-menu" /></svg>
+        </button>
+        <div class="site-panel" id="site-panel">
+          <nav aria-label="Main navigation">
+            <a href="#projects">Work</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <div class="header-tools">
+            <button type="button" class="print-button" hidden>
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-print" />
+              </svg>
+              Print CV
+            </button>
+            <button
+              type="button"
+              class="theme-toggle"
+              aria-label="Switch to dark theme"
+              hidden
+            >
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-theme" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </header>
-    <aside class="sidebar" id="sidebar" aria-label="Profile and navigation">
-      <a
-        class="identity"
-        href="#about"
-        aria-label="Daniel Chrobak, introduction"
-        ><span class="monogram" aria-hidden="true">dc<span>.</span></span
-        ><span class="identity-name">Daniel Chrobak</span
-        ><span class="identity-role">Founder &amp; CTO</span></a
-      >
-      <div class="location">
-        <span class="location-dot" aria-hidden="true"></span> Chicago, Illinois
-      </div>
-      <nav aria-label="Main navigation">
-        <a href="#about" aria-current="location"
-          ><span>01</span> Introduction
-          <span class="nav-arrow" aria-hidden="true">↗</span></a
-        >
-        <a href="#projects"
-          ><span>02</span> Selected work
-          <span class="nav-arrow" aria-hidden="true">↗</span></a
-        >
-        <a href="#experience"
-          ><span>03</span> Experience
-          <span class="nav-arrow" aria-hidden="true">↗</span></a
-        >
-        <a href="#skills"
-          ><span>04</span> Capabilities
-          <span class="nav-arrow" aria-hidden="true">↗</span></a
-        >
-        <a href="#education"
-          ><span>05</span> Education &amp; credentials
-          <span class="nav-arrow" aria-hidden="true">↗</span></a
-        >
-        <a href="#contact"
-          ><span>06</span> Get in touch
-          <span class="nav-arrow" aria-hidden="true">↗</span></a
-        >
-      </nav>
-      <div class="sidebar-bottom">
-        <a
-          href="https://github.com/DanielChrobak"
-          target="_blank"
-          rel="noopener noreferrer"
-          >GitHub <span aria-hidden="true">↗</span></a
-        ><a
-          href="https://www.linkedin.com/in/danielchrobak12/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >LinkedIn <span aria-hidden="true">↗</span></a
-        >
-        <div class="sidebar-tools">
-          <button type="button" class="print-button" hidden>
-            Print CV <span aria-hidden="true">↗</span></button
-          ><button
-            type="button"
-            class="theme-toggle"
-            aria-label="Switch to light theme"
-            hidden
-          >
-            <span aria-hidden="true">◐</span>
-          </button>
-        </div>
-        <span class="sidebar-caption">CURRICULUM VITAE / 2026</span>
-      </div>
-    </aside>
-    <main id="main">
-      <section id="about" class="hero" aria-labelledby="intro-title">
-        <div class="section-kicker">
-          <span>Independent builder. Systems to product.</span
-          ><span class="edition">CV / 2026</span>
-        </div>
-        <p class="eyebrow">FOUNDER &amp; CTO · SLIPSTREAM</p>
-        <h1 id="intro-title">
-          Daniel<br />
-          Chrobak<span class="accent">.</span>
-        </h1>
-        <div class="hero-intro">
-          <p class="hero-statement">
-            Native performance.<br class="desktop-break" />
-            A browser experience.
+    <main id="main" tabindex="-1">
+      <section id="about" class="hero shell" aria-labelledby="intro-title">
+        <div class="hero-copy">
+          <h1 id="intro-title">
+            Daniel<br class="name-break" />
+            Chrobak
+          </h1>
+          <p class="hero-role">
+            Founder &amp; CTO of <a href="#project-slipstream">SlipStream</a>
           </p>
           <p class="hero-description">
-            I’m the founder and CTO of SlipStream, my full-time project: a
-            Windows-to-browser remote desktop application with a C++23 host and
-            TypeScript client. I built its capture-to-browser pipeline around
-            Windows desktop capture, GPU video encoding, QUIC/WebTransport, and
-            WebCodecs. I also build open-source tools for Hyper-V GPU
-            virtualization and remote audio.
+            I build remote desktop software for Windows and the browser, from
+            native capture and GPU encoding to network delivery and rendering. I
+            also build open-source tools for Hyper-V GPU virtualization and
+            remote audio.
           </p>
+          <div class="hero-actions">
+            <a class="button-primary" href="#projects"
+              >View selected work
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-down" />
+              </svg>
+            </a>
+            <a class="text-link" href="mailto:danielchrobak12@gmail.com"
+              >Email me
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-external" />
+              </svg>
+            </a>
+          </div>
         </div>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#projects"
-            >Explore my work <span aria-hidden="true">↗</span></a
-          ><a class="text-link" href="mailto:danielchrobak12@gmail.com"
-            >Let’s connect <span aria-hidden="true">↗</span></a
-          >
-        </div>
-        <div class="hero-foot">
-          <span><span class="small-label">BASED IN</span>Chicago, Illinois</span
-          ><span
-            ><span class="small-label">WORKING ACROSS</span>Software · Systems ·
-            Networks</span
-          ><a href="#project-slipstream"
-            ><span class="small-label">CURRENT FOCUS</span>SlipStream
-            <span aria-hidden="true">↗</span></a
-          >
+        <figure class="hero-figure">
+          <a class="hero-plate" href="#project-slipstream">
+            <span class="plate-heading"
+              ><span>Fig. 01</span> SlipStream delivery path</span
+            >
+            <svg class="plate-drawing" viewBox="0 0 560 324" aria-hidden="true">
+              <defs>
+                <pattern
+                  id="drawing-grid"
+                  width="24"
+                  height="24"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <path
+                    d="M0 24V0h24"
+                    fill="none"
+                    stroke="var(--plate-grid)"
+                    stroke-width="1"
+                  />
+                </pattern>
+                <pattern
+                  id="drawing-raster"
+                  width="6"
+                  height="6"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <path
+                    d="M0 6 6 0"
+                    stroke="var(--plate-line)"
+                    stroke-width="1"
+                  />
+                </pattern>
+              </defs>
+              <path d="M0 0h560v324H0z" fill="url(#drawing-grid)" />
+              <path
+                d="M24 40V24h16m480 0h16v16M24 284v16h16m480 0h16v-16"
+                class="drawing-register"
+              />
+              <path
+                d="M48 50l166 96m116-96 166 96M48 202l166 96m116-96 166 96"
+                class="drawing-guide"
+              />
+              <g class="drawing-host">
+                <path d="M48 50h282v152H48z" class="drawing-frame" />
+                <path
+                  d="M48 74h282M67 62h28m-23 31h111v68H72zM72 177h55m13 0h43"
+                  class="drawing-line"
+                />
+                <path
+                  d="M83 104h34v22H83zM121 104h50v22h-50zM83 130h34v20H83zM121 130h50v20h-50z"
+                  class="drawing-pixels"
+                />
+              </g>
+              <g class="drawing-encode">
+                <path d="M131 98h282v152H131z" class="drawing-frame" />
+                <path
+                  d="M150 116h96v65h-96z"
+                  fill="url(#drawing-raster)"
+                  stroke="var(--plate-line)"
+                />
+                <path d="M150 193h44m9 0h44m-97 9h23" class="drawing-line" />
+              </g>
+              <g class="drawing-client">
+                <path d="M214 146h282v152H214z" class="drawing-frame" />
+                <path
+                  d="M214 173h282M236 191h100v86H236zM351 192h117v12H351zM351 217h117m-117 12h94m-94 12h105m-105 12h69m-69 12h94"
+                  class="drawing-line"
+                />
+                <path
+                  d="M244 267l25-40 17 19 18-32 22 53z"
+                  class="drawing-pixels"
+                />
+                <circle cx="306" cy="204" r="6" class="drawing-pixels" />
+                <path d="M232 159h2m9 0h2m9 0h2" class="drawing-register" />
+              </g>
+              <path
+                d="M42 126h47l17-20h32l41 47h23l39 47h36"
+                class="drawing-trace"
+              />
+              <path
+                d="M42 126h47l17-20h32l41 47h23l39 47h36"
+                class="drawing-pulse"
+                pathLength="1"
+              />
+              <circle cx="42" cy="126" r="4" class="drawing-end" />
+              <circle cx="277" cy="200" r="5" class="drawing-end" />
+            </svg>
+            <ol class="plate-legend">
+              <li><span>01</span> Windows capture</li>
+              <li><span>02</span> GPU encode</li>
+              <li><span>03</span> Browser render</li>
+            </ol>
+            <span class="plate-action"
+              >Explore the SlipStream case study
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-down" />
+              </svg>
+            </span>
+          </a>
+          <figcaption class="visually-hidden">
+            Architecture overview. Captured Windows desktop frames are encoded
+            on the GPU and sent over WebTransport for browser decoding and
+            rendering.
+          </figcaption>
+        </figure>
+        <div class="hero-meta">
+          <span>Chicago, Illinois</span>
+          <div>
+            <a
+              class="text-link"
+              href="https://github.com/DanielChrobak"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-external" /></svg
+            ></a>
+            <a
+              class="text-link"
+              href="https://www.linkedin.com/in/danielchrobak12/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-external" /></svg
+            ></a>
+          </div>
         </div>
       </section>
-      <section id="projects" class="section" aria-labelledby="projects-title">
+      <section
+        id="projects"
+        class="section shell"
+        aria-labelledby="projects-title"
+      >
         <div class="section-heading">
-          <div>
-            <p class="eyebrow">02 / SELECTED WORK</p>
-            <h2 id="projects-title">
-              Built to solve<br />
-              real problems.
-            </h2>
-          </div>
-          <p>
-            SlipStream is my current focus, supported by work in GPU
-            virtualization and remote audio. I build the native tools, browser
-            interfaces, and infrastructure that connect them.
-          </p>
+          <h2 id="projects-title">Selected work</h2>
+          <p>Remote desktop, GPU virtualization, and network audio.</p>
         </div>
         <div class="project-toolbar" hidden>
           <div class="filters" role="group" aria-label="Filter projects">
@@ -212,22 +326,14 @@
             id="project-slipstream"
             data-category="systems"
           >
-            <div class="project-topline">
-              <span class="project-index">PROJECT / 01</span
-              ><span class="project-signal"
-                >Current focus · Private source</span
-              >
-            </div>
             <div class="project-layout">
               <div class="project-copy">
-                <p class="small-label">
-                  REAL-TIME MEDIA &amp; BROWSER ENGINEERING
+                <h3>SlipStream</h3>
+                <p class="project-deck">Windows-to-browser remote desktop</p>
+                <p class="project-meta">
+                  <strong>Featured case study</strong> · Current focus · Private
+                  source
                 </p>
-                <h3>
-                  Your desktop.<br />
-                  Through a browser.
-                </h3>
-                <p class="project-name">SlipStream</p>
                 <p>
                   Building a Windows-to-browser remote desktop application with
                   a C++23 host and TypeScript client. Captures the desktop,
@@ -249,41 +355,51 @@
                   href="https://danielchrobak.github.io/SlipStream/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Visit SlipStream website <span aria-hidden="true">↗</span></a
-                >
+                  >Visit SlipStream website
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#icon-external" /></svg
+                ></a>
               </div>
-              <div
-                class="stream-visual"
-                role="img"
-                aria-label="Architecture illustration: Windows capture and GPU encoding send video over WebTransport to a browser decoder and renderer; input returns to the host."
-              >
-                <div class="visual-label">SLIPSTREAM / DELIVERY PATH</div>
-                <div class="stream-window">
-                  <div class="window-bar">
-                    <span aria-hidden="true">● ● ●</span
-                    ><span>Windows → browser</span>
-                  </div>
-                  <div class="stream-mark" aria-hidden="true">
-                    <span></span><span></span><span></span>
-                  </div>
-                  <span class="stream-caption"
-                    >A native host. A browser client.</span
-                  >
-                </div>
-                <div class="stream-path">
-                  <span>Capture</span><span aria-hidden="true">→</span
-                  ><span>Encode</span><span aria-hidden="true">→</span
-                  ><span>Transport</span><span aria-hidden="true">→</span
-                  ><span>Render</span>
-                </div>
-                <div class="visual-footer">
-                  <span>VIDEO OUT / INPUT BACK</span><span>C++ ↔ TS</span>
-                </div>
-              </div>
+              <figure class="project-figure stream-visual">
+                <figcaption><span>Fig. 02</span> Capture to browser</figcaption>
+                <ol class="pipeline">
+                  <li>
+                    <span>01</span>
+                    <div>
+                      <strong>Capture</strong>
+                      <p>DXGI / Windows Graphics Capture</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span>02</span>
+                    <div>
+                      <strong>Encode</strong>
+                      <p>NVENC / AMF / QSV / Media Foundation</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span>03</span>
+                    <div>
+                      <strong>Deliver</strong>
+                      <p>QUIC / WebTransport</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span>04</span>
+                    <div>
+                      <strong>Decode and render</strong>
+                      <p>WebCodecs / WebGPU / WebGL</p>
+                    </div>
+                  </li>
+                </ol>
+              </figure>
             </div>
             <details class="project-details" id="slipstream-details">
               <summary>
-                Behind the project <span aria-hidden="true">+</span>
+                Behind the project
+                <svg class="icon disclosure-icon" aria-hidden="true">
+                  <use href="#icon-plus" />
+                </svg>
               </summary>
               <div class="detail-grid">
                 <div>
@@ -317,25 +433,18 @@
             </details>
           </article>
           <article class="project" id="project-gpu" data-category="systems">
-            <div class="project-topline">
-              <span class="project-index">PROJECT / 02</span
-              ><span
-                class="project-signal"
-                title="GitHub snapshot: <!-- GITHUB_DATE -->"
-                ><span aria-hidden="true">☆</span>
-                <!-- GPU_STARS -->
-                GitHub stars</span
-              >
-            </div>
             <div class="project-layout">
               <div class="project-copy">
-                <p class="small-label">WINDOWS SYSTEMS &amp; AUTOMATION</p>
-                <h3>
-                  One GPU.<br />
-                  More possibilities.
-                </h3>
-                <p class="project-name">
-                  Hyper-V GPU Paravirtualization Manager
+                <h3>Hyper-V GPU Paravirtualization Manager</h3>
+                <p class="project-deck">
+                  GPU sharing for Windows virtual machines
+                </p>
+                <p class="project-meta">
+                  <strong>Open source</strong> ·
+                  <span title="GitHub snapshot: <!-- GITHUB_DATE -->">
+                    <!-- GPU_STARS -->
+                    GitHub stars
+                  </span>
                 </p>
                 <p>
                   An open-source PowerShell/WPF application for sharing a
@@ -355,46 +464,37 @@
                   href="https://github.com/DanielChrobak/Hyper-V-GPU-Paravirtualization-Manager"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Explore repository <span aria-hidden="true">↗</span></a
-                >
+                  >Explore repository
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#icon-external" /></svg
+                ></a>
               </div>
-              <div
-                class="gpu-visual"
-                role="img"
-                aria-label="Architecture illustration: a Windows host shares its GPU with three Hyper-V virtual machines. Hardware and driver compatibility determine support."
-              >
-                <div class="visual-label">GPU PARTITIONING / ARCHITECTURE</div>
+              <figure class="project-figure gpu-visual">
+                <figcaption><span>Fig. 03</span> GPU partitioning</figcaption>
                 <div class="host-node">
-                  <span class="chip-icon" aria-hidden="true">▦</span>
-                  <div>
-                    <strong>Windows host</strong
-                    ><span>Physical GPU · shared resources</span>
-                  </div>
-                  <span class="node-indicator" aria-hidden="true"></span>
+                  <strong>Windows host</strong><span>Physical GPU</span>
                 </div>
-                <div class="connector" aria-hidden="true"></div>
+                <svg
+                  class="gpu-branches"
+                  viewBox="0 0 300 56"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                >
+                  <path d="M150 0v56M50 56V28h200v28" />
+                </svg>
                 <div class="vm-nodes">
-                  <div>
-                    <span class="vm-icon" aria-hidden="true">▱</span
-                    ><strong>VM 01</strong><span>Graphics</span>
-                  </div>
-                  <div>
-                    <span class="vm-icon" aria-hidden="true">▱</span
-                    ><strong>VM 02</strong><span>Development</span>
-                  </div>
-                  <div>
-                    <span class="vm-icon" aria-hidden="true">▱</span
-                    ><strong>VM 03</strong><span>Compute</span>
-                  </div>
+                  <div><strong>VM 01</strong><span>Graphics</span></div>
+                  <div><strong>VM 02</strong><span>Development</span></div>
+                  <div><strong>VM 03</strong><span>Compute</span></div>
                 </div>
-                <div class="visual-footer">
-                  <span>ONE HOST / MULTIPLE GUESTS</span><span>GPU-PV</span>
-                </div>
-              </div>
+              </figure>
             </div>
             <details class="project-details">
               <summary>
-                Behind the project <span aria-hidden="true">+</span>
+                Behind the project
+                <svg class="icon disclosure-icon" aria-hidden="true">
+                  <use href="#icon-plus" />
+                </svg>
               </summary>
               <div class="detail-grid">
                 <div>
@@ -428,20 +528,16 @@
             id="project-audio"
             data-category="audio"
           >
-            <div class="project-topline">
-              <span class="project-index">PROJECT / 03</span
-              ><span
-                class="project-signal"
-                title="GitHub snapshot: <!-- GITHUB_DATE -->"
-                >☆
-                <!-- MIC_STARS -->
-                stars</span
-              >
-            </div>
-            <div class="compact-symbol" aria-hidden="true">▂ ▅ █ ▆ ▃ ▇ ▄</div>
             <h3>Python Microphone Input Forwarder</h3>
+            <p class="project-meta">
+              <strong>Open source</strong> ·
+              <span title="GitHub snapshot: <!-- GITHUB_DATE -->">
+                <!-- MIC_STARS -->
+                GitHub stars
+              </span>
+            </p>
             <p>
-              Built to add microphone forwarding to a Sunshine/Moonlight setup
+              Built to forward microphone input in a Sunshine/Moonlight setup
               with GPU-partitioned Hyper-V VMs and thin clients. Paired Python
               sender and receiver tools capture microphone audio, stream it over
               the network, and route it into a VM’s virtual microphone, with GUI
@@ -457,11 +553,16 @@
               href="https://github.com/DanielChrobak/Python-Microphone-Input-Forwarder"
               target="_blank"
               rel="noopener noreferrer"
-              >Explore repository <span aria-hidden="true">↗</span></a
-            >
+              >Explore repository
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-external" /></svg
+            ></a>
             <details class="project-details">
               <summary>
-                Project context <span aria-hidden="true">+</span>
+                Project context
+                <svg class="icon disclosure-icon" aria-hidden="true">
+                  <use href="#icon-plus" />
+                </svg>
               </summary>
               <p>
                 Built to supply remote microphone input in a GPU-partitioned
@@ -481,24 +582,19 @@
             href="https://github.com/DanielChrobak?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            >All public repositories <span aria-hidden="true">↗</span></a
-          >
+            >All public repositories
+            <svg class="icon" aria-hidden="true">
+              <use href="#icon-external" /></svg
+          ></a>
         </div>
       </section>
       <section
         id="experience"
-        class="section"
+        class="section shell"
         aria-labelledby="experience-title"
       >
         <div class="section-heading">
-          <div>
-            <p class="eyebrow">03 / EXPERIENCE</p>
-            <h2 id="experience-title">Building across systems.</h2>
-          </div>
-          <p>
-            Current product engineering, open-source Windows tooling, and the
-            infrastructure experience behind them.
-          </p>
+          <h2 id="experience-title">Experience</h2>
         </div>
         <div class="experience-list">
           <article class="experience">
@@ -506,8 +602,8 @@
               Jan 2025 — Present<span>Current full-time focus</span>
             </div>
             <div>
-              <h3>Founder &amp; CTO</h3>
-              <p class="experience-org">SlipStream</p>
+              <h3>SlipStream</h3>
+              <p class="experience-org">Founder &amp; CTO</p>
               <p>
                 Founded SlipStream and develop it full time: a
                 Windows-to-browser remote desktop application with a C++23 host
@@ -535,8 +631,8 @@
               Jan 2025 — Apr 2026<span>Wireless infrastructure venture</span>
             </div>
             <div>
-              <h3>Founder &amp; CTO</h3>
-              <p class="experience-org">Wireless Revenue</p>
+              <h3>Wireless Revenue</h3>
+              <p class="experience-org">Founder &amp; CTO</p>
               <p>
                 Founded a wireless infrastructure venture and built its software
                 tools for network monitoring and partner coordination.
@@ -595,17 +691,12 @@
           </article>
         </div>
       </section>
-      <section id="skills" class="section" aria-labelledby="skills-title">
+      <section id="skills" class="section shell" aria-labelledby="skills-title">
         <div class="section-heading">
-          <div>
-            <p class="eyebrow">04 / CAPABILITIES</p>
-            <h2 id="skills-title">From capture to client.</h2>
-          </div>
-          <p>Tools and technologies grounded in the work above.</p>
+          <h2 id="skills-title">Technical skills</h2>
         </div>
         <div class="capabilities">
           <article>
-            <span class="capability-number">01</span>
             <h3>Native &amp; browser software</h3>
             <p>
               Native applications, browser interfaces, APIs, and automation.
@@ -618,7 +709,6 @@
             </ul>
           </article>
           <article>
-            <span class="capability-number">02</span>
             <h3>Systems &amp; media</h3>
             <p>Where application software meets hardware and real-time data.</p>
             <ul class="skill-list">
@@ -629,7 +719,6 @@
             </ul>
           </article>
           <article>
-            <span class="capability-number">03</span>
             <h3>Virtualization &amp; infrastructure</h3>
             <p>GPU sharing, driver management, and hands-on networking.</p>
             <ul class="skill-list">
@@ -641,18 +730,20 @@
           </article>
         </div>
       </section>
-      <section id="education" class="section" aria-labelledby="education-title">
+      <section
+        id="education"
+        class="section shell"
+        aria-labelledby="education-title"
+      >
         <div class="section-heading">
-          <div>
-            <p class="eyebrow">05 / EDUCATION &amp; CREDENTIALS</p>
-            <h2 id="education-title">A technical foundation.</h2>
-          </div>
+          <h2 id="education-title">Education &amp; credentials</h2>
         </div>
         <article class="education-record">
           <div>
-            <span class="small-label">MORAINE VALLEY COMMUNITY COLLEGE</span>
             <h3>Associate of Arts and Sciences</h3>
-            <p class="experience-org">Information Technology</p>
+            <p class="experience-org">
+              Information Technology · Moraine Valley Community College
+            </p>
             <p>
               Network security, systems administration, cybersecurity
               fundamentals, and network infrastructure.
@@ -662,15 +753,13 @@
         </article>
         <article class="education-record">
           <div>
-            <span class="small-label">ALAN B. SHEPARD HIGH SCHOOL</span>
-            <h3>High school</h3>
+            <h3>Alan B. Shepard High School</h3>
             <p class="experience-org">Attended through 2024</p>
           </div>
           <span class="education-year">2024</span>
         </article>
         <div class="credential-summary">
           <div>
-            <p class="small-label">CERTIFICATION HIGHLIGHT</p>
             <h3>Cisco Certified Support Technician</h3>
             <p>Cybersecurity · Earned April 2024</p>
           </div>
@@ -679,58 +768,63 @@
             href="https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&amp;id=515&amp;cvid=KKPh3zgIUhL30nBtJ3xnSA=="
             target="_blank"
             rel="noopener noreferrer"
-            >View credential <span aria-hidden="true">↗</span></a
-          >
+            >View credential
+            <svg class="icon" aria-hidden="true">
+              <use href="#icon-external" /></svg
+          ></a>
         </div>
         <details class="credentials-details">
           <summary>
             All credentials
             <span class="summary-note"
               >Development, networking, security &amp; design</span
-            ><span aria-hidden="true">+</span>
+            ><svg class="icon disclosure-icon" aria-hidden="true">
+              <use href="#icon-plus" />
+            </svg>
           </summary>
           <div class="credentials-list"><!-- CREDENTIALS --></div>
-          <p class="detail-note">
-            Credential dates and issuer links are retained from the original CV.
-            Links open the issuer’s record.
-          </p>
+          <p class="detail-note">Links open the issuer’s credential record.</p>
         </details>
       </section>
       <section
         id="contact"
-        class="section contact-section"
+        class="section contact-section shell"
         aria-labelledby="contact-title"
       >
-        <p class="eyebrow">06 / GET IN TOUCH</p>
-        <h2 id="contact-title">
-          Have something<br />
-          worth building<span class="accent">?</span>
-        </h2>
-        <p>
-          I’m always interested in thoughtful conversations about software,
-          systems, and the problems they can solve.
-        </p>
+        <h2 id="contact-title">Get in touch</h2>
+        <p>Email me about software engineering and systems work.</p>
         <a class="contact-email" href="mailto:danielchrobak12@gmail.com"
-          >danielchrobak12@gmail.com <span aria-hidden="true">↗</span></a
-        >
+          >danielchrobak12@gmail.com
+          <svg class="icon" aria-hidden="true">
+            <use href="#icon-external" /></svg
+        ></a>
         <div class="contact-links">
           <a
             href="https://github.com/DanielChrobak"
             target="_blank"
             rel="noopener noreferrer"
-            >GitHub ↗</a
+            >GitHub
+            <svg class="icon" aria-hidden="true">
+              <use href="#icon-external" /></svg></a
           ><a
             href="https://www.linkedin.com/in/danielchrobak12/"
             target="_blank"
             rel="noopener noreferrer"
-            >LinkedIn ↗</a
+            >LinkedIn
+            <svg class="icon" aria-hidden="true">
+              <use href="#icon-external" /></svg></a
           ><a
             href="https://x.com/imwardeb"
             target="_blank"
             rel="noopener noreferrer"
-            >X / @imwardeb ↗</a
+            >X / @imwardeb
+            <svg class="icon" aria-hidden="true">
+              <use href="#icon-external" /></svg></a
           ><button type="button" class="print-button" hidden>
-            Print / Save CV <span aria-hidden="true">↗</span>
+            Print / Save CV
+            <svg class="icon" aria-hidden="true">
+              <use href="#icon-external" />
+            </svg>
           </button>
         </div>
         <p class="print-contact">
@@ -738,10 +832,12 @@
           github.com/DanielChrobak · linkedin.com/in/danielchrobak12
         </p>
       </section>
-      <footer>
-        <span>© <span id="year">2026</span> Daniel Chrobak</span
-        ><span>Crafted with purpose. Built for the web.</span
-        ><a href="#about">Back to top ↑</a>
+      <footer class="site-footer shell">
+        <span>© <span id="year">2026</span> Daniel Chrobak</span>
+        <a class="text-link" href="#about"
+          >Back to top
+          <svg class="icon" aria-hidden="true"><use href="#icon-up" /></svg
+        ></a>
       </footer>
     </main>
     <script type="module" src="/src/main.ts"></script>

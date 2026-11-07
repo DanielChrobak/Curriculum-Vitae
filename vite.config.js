@@ -20,7 +20,7 @@ export default defineConfig({
         const groups = Object.entries(credentials)
           .map(
             ([name, group]) =>
-              `<div class="credential-group"><h4>${escape(name)}</h4><ul>${group.items.map((item) => `<li><a href="${escape(item.url)}" target="_blank" rel="noopener noreferrer"><span>${escape(item.name)}</span><span class="credential-date">${escape(item.date)} <span aria-hidden="true">↗</span></span></a></li>`).join("")}</ul></div>`,
+              `<div class="credential-group"><h4>${escape(name)}</h4><ul>${group.items.map((item) => `<li><a href="${escape(item.url)}" target="_blank" rel="noopener noreferrer"><span>${escape(item.name)}</span><span class="credential-date">${escape(item.date)} <svg class="icon" aria-hidden="true"><use href="#icon-external"/></svg></span></a></li>`).join("")}</ul></div>`,
           )
           .join("");
         return html

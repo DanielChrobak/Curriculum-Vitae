@@ -1,4 +1,6 @@
 node_modules/
 dist/
 .local/
+.impeccable/hook.cache.json
+.impeccable/questions/
 package-lock.json

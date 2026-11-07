@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-07T08:19:36.545Z",
+  "title": "Design System: Engineering Folio",
+  "extensions": {
+    "colorMeta": {
+      "plate": {
+        "role": "primary",
+        "displayName": "Ultramarine drawing plate"
+      },
+      "signal": {
+        "role": "secondary",
+        "displayName": "Amber delivery trace"
+      },
+      "light-page": {
+        "role": "neutral",
+        "displayName": "Drawing stock"
+      },
+      "dark-page": {
+        "role": "neutral",
+        "displayName": "Dark drawing stock"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Archivo display",
+        "purpose": "Name in the introduction."
+      },
+      "label": {
+        "displayName": "Figure labels",
+        "purpose": "Numbered figures, stages, and education dates."
+      }
+    },
+    "motion": [
+      {
+        "name": "trace-delivery",
+        "value": "800ms cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "purpose": "A single pulse traces the delivery path on hover or focus. Reduced-motion mode keeps the drawing static."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-index",
+        "value": "960px"
+      },
+      {
+        "name": "single-column",
+        "value": "700px"
+      },
+      {
+        "name": "narrow-phone",
+        "value": "400px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Filled link for the main next step.",
+      "html": "<a class=\"ds-action\" href=\"#projects\">View selected work ↓</a>",
+      "css": ".ds-action{display:inline-flex;align-items:center;min-height:49px;padding:4px 16px;color:var(--action-text,#fff);background:var(--action,#2931bf);font:700 .875rem system-ui;text-decoration:none}.ds-action:hover{background:var(--action-hover,#191e93)}.ds-action:focus-visible{outline:2px solid var(--accent,#2931bf);outline-offset:4px}"
+    },
+    {
+      "name": "Print control",
+      "kind": "button",
+      "refersTo": "button-print",
+      "description": "Outlined action for printing or saving a CV.",
+      "html": "<button class=\"ds-print\" type=\"button\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" aria-hidden=\"true\"><path d=\"M7 8V3h10v5M7 17H4V9h16v8h-3M7 14h10v7H7zm9-2h1\"/></svg>Print CV</button>",
+      "css": ".ds-print{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:4px 12px;color:var(--ink,#1b1c31);background:transparent;border:1px solid var(--rule-strong,#9598b6);font:700 .875rem system-ui}.ds-print:hover{background:var(--wash,#eceefa)}.ds-print:focus-visible{outline:2px solid var(--accent,#2931bf);outline-offset:4px}"
+    },
+    {
+      "name": "Section index",
+      "kind": "nav",
+      "refersTo": "index-link-current",
+      "description": "A ruled link indicates the current section.",
+      "html": "<nav class=\"ds-index\" aria-label=\"Section index\"><a href=\"#projects\" aria-current=\"location\">Work</a><a href=\"#experience\">Experience</a></nav>",
+      "css": ".ds-index{display:flex;gap:16px;border-bottom:1px solid var(--rule,#d3d4e3)}.ds-index a{display:inline-flex;align-items:center;min-height:72px;padding:0 4px;color:var(--muted,#515369);font:600 .9rem system-ui;text-decoration:none}.ds-index a[aria-current]{box-shadow:inset 0 -3px var(--accent,#2931bf);color:var(--accent,#2931bf)}.ds-index a:hover{text-decoration:underline;text-underline-offset:.26em}.ds-index a:focus-visible{outline:2px solid var(--accent,#2931bf);outline-offset:4px}"
+    },
+    {
+      "name": "Project filter",
+      "kind": "chip",
+      "refersTo": "project-filter-selected",
+      "description": "A rectangular filter with a visible pressed state.",
+      "html": "<button class=\"ds-filter\" type=\"button\" aria-pressed=\"true\">All work</button>",
+      "css": ".ds-filter{min-height:44px;padding:3px 12px;background:transparent;border:1px solid transparent;color:var(--muted,#515369);font:600 .875rem system-ui}.ds-filter:hover,.ds-filter[aria-pressed=true]{color:var(--accent,#2931bf);background:var(--wash,#eceefa)}.ds-filter[aria-pressed=true]{border-color:var(--rule-strong,#9598b6)}.ds-filter:focus-visible{outline:2px solid var(--accent,#2931bf);outline-offset:4px}"
+    },
+    {
+      "name": "Drawing plate",
+      "kind": "custom",
+      "refersTo": "drawing-plate",
+      "description": "Ultramarine field for figures and a linked action.",
+      "html": "<a class=\"ds-plate\" href=\"#project-slipstream\"><strong>Fig. 01 · SlipStream delivery path</strong><svg viewBox=\"0 0 270 75\" width=\"100%\" aria-hidden=\"true\"><path d=\"M15 8h110v36H15zM76 23h110v36H76zM138 37h110v36H138z\" fill=\"var(--plate-frame,#323bc7)\" stroke=\"var(--plate-line,#adb6ff)\"/><path d=\"M12 29h65l24 15h47l24 11h35\" fill=\"none\" stroke=\"var(--signal,#ffba72)\" stroke-width=\"2\"/></svg><span>Explore the SlipStream case study</span></a>",
+      "css": ".ds-plate{display:grid;gap:14px;padding:clamp(14px,2.25vw,30px);color:var(--plate-text,#fff);background:var(--plate,#292fb7);font:670 .875rem system-ui;text-decoration:none}.ds-plate span{border-top:1px solid var(--plate-line,#adb6ff);padding-top:13px}.ds-plate:is(:hover,:focus-visible) span{color:var(--signal,#ffba72)}.ds-plate:focus-visible{outline:2px solid var(--accent,#2931bf);outline-offset:4px}"
+    },
+    {
+      "name": "Project disclosure",
+      "kind": "custom",
+      "refersTo": "disclosure",
+      "description": "Native disclosure for optional project detail.",
+      "html": "<details class=\"ds-disclosure\"><summary>Behind the project<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" aria-hidden=\"true\"><path d=\"M5 12h14m-7-7v14\"/></svg></summary><p>DXGI/WGC capture and WebTransport delivery.</p></details>",
+      "css": ".ds-disclosure{border-top:1px solid var(--rule,#d3d4e3);font:1rem/1.65 system-ui}.ds-disclosure summary{display:flex;justify-content:space-between;align-items:center;min-height:48px;list-style:none;color:var(--accent,#2931bf);font-size:.925rem;font-weight:700;cursor:pointer}.ds-disclosure summary:hover{text-decoration:underline}.ds-disclosure[open] svg{transform:rotate(45deg)}.ds-disclosure p{margin:0 0 14px;color:var(--muted,#515369)}.ds-disclosure summary:focus-visible{outline:2px solid var(--accent,#2931bf);outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Engineering Folio",
+    "overview": "Drawing stock, ultramarine ink, and precise rules frame the CV. Archivo headings lead each record, and numbered figures explain the architecture.",
+    "keyCharacteristics": [
+      "Ruled sections and square controls.",
+      "An amber delivery trace across labelled drawing planes.",
+      "A light A4 print layout."
+    ],
+    "rules": [
+      {
+        "name": "The Amber Signal Rule",
+        "body": "Reserve amber for the drawing trace, figure labels, and interactions on indigo surfaces.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ruled Surface Rule",
+        "body": "Separate records with thin rules and use solid fields for featured evidence.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Lead with names and actual qualifications.",
+      "Keep focus visible and respect reduced motion."
+    ],
+    "donts": ["Keep gradients and shadows out of evidence surfaces."]
+  }
+}
